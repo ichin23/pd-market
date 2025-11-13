@@ -12,9 +12,118 @@
     --secondary: #E0BB24;
     --blueHover: #dbefff;
     --blueLight: #a8d1f1;
+    --red: #cf432a;
+    --redLight: #e98a79;
+    --green: #3fc22e;
+    --brown: #7D2D0A;
+    --tempo: 20s
 }
 
 body{
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+}
+
+#carrossel{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    anchor-name: --carrossel;
+    scroll-snap-type: x mandatory;
+    scroll-marker-group: after;
+}
+
+#carrossel::scroll-marker-group{
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+    margin-top: 12px;
+}
+
+.cardCarrossel::scroll-marker{
+    content: '';
+    width: 1em;
+    height: 1em;
+    background-color: #0f0f0f;
+    border-radius: 50%;
+}
+
+.cardCarrossel::scroll-marker:target-current{
+    background-color: var(--primary);
+}
+
+#carrossel::-webkit-scrollbar{
+    display: none;
+}
+
+#carrossel::scroll-button(right), #carrossel::scroll-button(left){
+    content: '⟶';
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    font-size: 30px;
+    position: fixed;
+    position-anchor: --carrossel;
+    position-area: right center;
+    translate: -110%;
+}
+
+#carrossel::scroll-button(left){
+    content: '⟵';
+    position-area: left center;
+    translate: 110%;
+}
+
+
+#carrossel::scroll-button(right):disabled, #carrossel::scroll-button(left):disabled{
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.cardCarrossel{
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    padding: 50px;
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardCarrossel>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardCarrossel strong{
+    font-size: 4em;
+    color: var(--white);
+}
+
+.cardCarrossel s{
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.cardCarrossel ins{
+    text-decoration: none;
+    font-size: 3em;
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+@media (max-width: 500px){
+    .cardCarrossel strong{
+        font-size: 2em;
+    }
+
+    #carrossel::scroll-button(right), #carrossel::scroll-button(left){
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
 }

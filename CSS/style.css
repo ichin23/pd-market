@@ -54,6 +54,7 @@ header > nav{
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    background-color: var(--white);
 }
 
 nav ul{
@@ -100,6 +101,10 @@ label[for=menuOpen]{
     align-items: center;
     justify-content: center;
     margin-right: 30px;
+    cursor: pointer;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 12px;
 }
 
 #badgeCart>#iconCart{
@@ -111,7 +116,7 @@ label[for=menuOpen]{
     position: absolute;
     top: -10px;
     right: -20px;
-    background-color: aqua;
+    background-color: var(--secondary);
     width: 30px;
     height: 30px;
     display: flex;
@@ -127,40 +132,38 @@ main{
 }
 
 @media (max-width: 900px) {
-  header > div {
-    position: static;
-  }
-
-  header{
-    background-color: var(--blueHover);
-  }
-    label[for=menuOpen]{
-        display: block;
+    header > div {
+        position: static;
     }
 
-  header > nav {
-    position: static;
-    transform: none;
-    height: fit-content;
-    display: none; /* começa escondido */
-    align-items: center;
-    justify-content: center;
-  }
+    header{
+        background-color: var(--blueHover);
+    }
+        label[for=menuOpen]{
+            display: block;
+        }
 
-  header > nav > ul {
-    display: flex;
-    flex-direction: column;
-  }
+    header > nav {
+        position: static;
+        transform: none;
+        height: fit-content;
+        display: none; /* começa escondido */
+        align-items: center;
+        justify-content: center;
+    }
 
-  header {
-    display: flex;
-    flex-direction: column;
-  }
+    header > nav > ul {
+        display: flex;
+        flex-direction: column;
+    }
 
-  /* QUANDO O MENU ESTIVER ABERTO */
-  #menuOpen:checked ~ header > nav {
-    display: flex; /* mostra o menu */
-  }
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    #menuOpen:checked ~ header > nav {
+        display: flex; 
+    }
 
     #logoHeader>span{
         font-size: 30px;
@@ -168,5 +171,11 @@ main{
 
     #logoHeader>h1{
         font-size: 25px;
+    }
+
+    #badgeCart>#cartNumberBadge{
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
     }
 }

@@ -18,3 +18,83 @@ body{
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
+
+
+main{
+    width: 100vw;
+}
+
+aside{
+    width: 20vw;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+aside > #titulo{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+aside fieldset, form > div{
+    width: 100%;
+    border: none;
+    padding-top: 20px;
+}
+
+aside legend, aside label{
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 30px;
+    
+}
+
+aside input, aside select{
+    width: 100%;
+    border: 2px solid var(--black);
+    height: 30px;
+    border-radius: 8px;
+    background-color: transparent;
+    padding-left: 8px;
+}
+
+#precoField > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#precoField{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#precoField > div input{
+    width: 50%;
+}
+
+fieldset label{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:8px;
+}
+fieldset > label >input{
+    width: min-content;
+}
+
+aside button{
+    width: 100%;
+    border: none;
+    background-color: var(--secondary);
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: var(--white);
+    cursor: pointer;
+}

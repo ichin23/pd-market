@@ -152,7 +152,9 @@ aside button{
     height: 40px;
 }
 #containerProdutos > section{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 10px;
     flex-flow: row wrap;
     gap: 10px;
     padding: 20px;
@@ -175,6 +177,9 @@ aside button{
 
 .produtoCard > img{
     width: 250px;
+    height: 250px;
+    object-fit: cover;
+    align-self: center;
 }
 
 .produtoCard > div, .modal .preco{
@@ -287,6 +292,10 @@ aside button{
     text-decoration: none;
 }
 
+.modal .content img{
+    max-width: 600px;
+}
+
 .modal button{
     background-color: var(--secondary);
     padding: 10px 20px;
@@ -295,6 +304,7 @@ aside button{
     display: flex;
     align-items: center;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .preco + div, .preco+div>div{

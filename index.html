@@ -11,14 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Audiowide" rel="stylesheet">
 </head>
 <body>
+    <!--Uma entrada de dados escondida para controlar ações do usuário-->
     <input type="checkbox" id="menuOpen" hidden />
+    <!--Indica o cabeçalho do site-->
     <header>
         <div>
+            <!--Separação do conteúdo para estilização-->
             <div id="logoHeader">
+                <!--Ícone dentro da aplicação-->
                 <span class="material-symbols-outlined">shopping_bag</span>
+                <!--Título principal da aplicação, nome da empresa-->
                 <h1>PDMarket</h1>
             </div>
             <div id="buttonsHeader">
+                <!--Label que comunica com o input escondido anteriormente-->
                 <label for="menuOpen">
                     <span class="material-symbols-outlined">menu</span>
                 </label>
@@ -28,9 +34,15 @@
                 </div>
             </div>
         </div>
+        <!--Navegação dentro da aplicação-->
         <nav id="menuNav">
+            <!--Lista não ordenada de items, nesse caso itens do menu-->
             <ul>
-                <li><a href="#">Ofertas</a></li>
+                <!--Um item dentro de uma lista-->
+                <li>
+                    <!--Link para uma seção da página-->
+                    <a href="#">Ofertas</a>
+                </li>
                 <li><a href="#">Produtos</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>

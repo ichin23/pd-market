@@ -26,6 +26,8 @@ main{
     display: flex;
 }
 
+main > input{display: none;}
+
 aside{
     width: 20vw;
     max-width: 400px;
@@ -176,6 +178,7 @@ aside button{
     padding: 12px;
     display: flex;
     flex-flow: column nowrap;
+    height: 100%;
     gap: 10px
 }
 

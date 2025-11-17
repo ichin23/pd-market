@@ -16,7 +16,6 @@
     --redLight: #e98a79;
     --green: #3fc22e;
     --brown: #7D2D0A;
-    --tempo: 20s
 }
 
 body{
@@ -24,65 +23,65 @@ body{
     overflow-x: hidden;
 }
 
-#carrossel{
-    display: flex;
+#carrossel{ 
     overflow-x: auto;
     scroll-behavior: smooth;
     anchor-name: --carrossel;
-    scroll-snap-type: x mandatory;
-    scroll-marker-group: after;
 }
 
-#carrossel::scroll-marker-group{
+#carrosselSlider{
     display: flex;
-    justify-content: center;
-    gap: .5em;
-    margin-top: 12px;
+    width: calc(100vw*5);
+    scroll-snap-type: x mandatory;
+    animation: scrollCarrossel 15s linear infinite;
 }
 
-.cardCarrossel::scroll-marker{
-    content: '';
-    width: 1em;
-    height: 1em;
-    background-color: #0f0f0f;
-    border-radius: 50%;
-}
-
-.cardCarrossel::scroll-marker:target-current{
-    background-color: var(--primary);
+#carrosselSlider:hover{
+    animation-play-state: paused;
 }
 
 #carrossel::-webkit-scrollbar{
     display: none;
 }
 
-#carrossel::scroll-button(right), #carrossel::scroll-button(left){
-    content: '⟶';
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 12px;
-    width: 70px;
-    height: 70px;
-    border-radius: 16px;
-    font-size: 30px;
-    position: fixed;
-    position-anchor: --carrossel;
-    position-area: right center;
-    translate: -110%;
+@keyframes scrollCarrossel {
+    0%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(-100%);
+    }
+    20%{
+        transform: translatex(-100%);
+    }
+    30%{
+        transform: translatex(-200%);
+    }
+    40%{
+        transform: translatex(-200%);
+    }
+
+    50%{
+        transform: translatex(-300%);
+    }
+    60%{
+        transform: translatex(-300%);
+    }
+    70%{
+        transform: translatex(-400%);
+    }
+    80%{
+        transform: translatex(-400%);
+    }
+    90%{
+        transform: translatex(0%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+    
 }
 
-#carrossel::scroll-button(left){
-    content: '⟵';
-    position-area: left center;
-    translate: 110%;
-}
-
-
-#carrossel::scroll-button(right):disabled, #carrossel::scroll-button(left):disabled{
-    opacity: 0.5;
-    cursor: auto;
-}
 
 .cardCarrossel{
     flex: 0 0 100vw;

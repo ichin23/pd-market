@@ -110,6 +110,10 @@ aside button{
     cursor: pointer;
 }
 
+#containerProdutos label[for="showFiltros"]{
+    display: none;
+}
+
 #containerProdutos{
     flex: 1 1 100vw;
     min-height: 100vh;
@@ -287,7 +291,7 @@ aside button{
 .modal .content .close {
     position: absolute;
     position-anchor: --modal-anchor;
-    position-area: top right;
+    position-area: top left;
     font-size: 50px;
     color: var(--secondary);
     text-decoration: none;
@@ -317,4 +321,80 @@ aside button{
 
 .modal input{
     width: 40px;
+}
+
+@media (max-width: 1200px){
+    .modal:target {
+        display: flex;
+        align-items: end;
+    }
+
+    .modal .content{
+        max-width: none;
+        width: 100vw;
+        flex-direction: column;
+        border-radius: 12px 12px 0 0;
+    }
+    .content img {
+        align-self: center;
+        width: 90vw;
+    }
+
+    #containerProdutos label{
+        width: min-content;
+    }
+
+    #searchProdutos{
+        display:none;
+    }
+    main aside{
+        display: none;
+    }
+
+    main aside label[for="showFiltros"]{
+        padding: 0;
+        width: 100%;
+        border: 1px solid red;
+        padding: 10px 20px;
+        border-radius: 12px;
+        color: red;
+        cursor: pointer;
+    }
+
+    #containerProdutos label[for="showFiltros"]{
+        display: block;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+    }
+
+    #showFiltros:checked ~ #filtroProd{
+        display: block;
+        position: absolute;
+        background-color: var(--white);
+        width: 100vw;
+        max-width: none;
+        padding: 50px;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    
+    #containerProdutos> section{
+        grid-template-columns: 1fr 1fr;
+        flex: 1 1 100vw;
+    }
+    .produtoCard > img{
+        width: 40vw;
+        height: 40vw;
+    }
+    .produtoCard .preco{
+        flex-direction: column;
+        align-items: start;
+    }
+    article .preco + div, article .preco+div>div{
+        display: none;
+    }
 }

@@ -26,8 +26,6 @@ main{
     display: flex;
 }
 
-main > input{display: none;}
-
 aside{
     width: 20vw;
     max-width: 400px;

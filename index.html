@@ -10,15 +10,20 @@
 </head>
 <body>
     
+    <!--Define a seção principal da aplicação-->
     <main>
-        <input type="checkbox" id="showFiltros" name="showFiltros"/>
+        <input type="checkbox" id="showFiltros" name="showFiltros" hidden/>
+        <!--Define um conteúdo secundário relacionado com o conteúdo principal -->
         <aside id="filtroProd">
             <span id="titulo">
                 <span class="material-symbols-outlined">filter_alt</span>
                 Filtros
             </span>
+            <!--Define uma parte com várias entradas relacionadas e que são encaminhadas juntas-->
             <form>
+                <!--Faz um subconjunto no formulário com entradas que tratam do mesmo assunto-->
                 <fieldset id="precoField">
+                    <!--Dá um título pro subconjunto-->
                     <legend>Preço</legend>
                     <div>
                         <h4>Min: </h4>
@@ -31,6 +36,7 @@
                 </fieldset>
                 <div>
                     <label for="corSelect">Cor</label>
+                    <!--Uma entrada da dados com opção de seleção entre opções ao invés de o usuário digital-->
                     <select name="cor" id="corSelect">
                         <option>--Selecione--</option>
                         <option value="vermelho">Vermelho</option>
@@ -47,6 +53,7 @@
                     <label for="categoriaSelect">Categoria</label>
                     <select name="cateogria" id="categoriaSelect">
                         <option>--Selecione--</option>
+                        <!--Define um agrupamento de opções dentro do input de seleção-->
                         <optgroup label="Alimentos">
                             <option value="alimentos">Alimentos</option>
                             <option value="doces">Doces</option>
@@ -100,6 +107,7 @@
                         </label>
                     </div>
                 </fieldset>
+                <!--Botão de ação dentro da página, nesse caso enviar o filtro de produtos-->
                 <button>Filtrar (37)</button>
                 <div>    
                     <label for="showFiltros">Fechar</label>
@@ -133,6 +141,7 @@
                                 <s>R$ 4,98</s>
                                 <ins>R$ 2,35</ins>
                             </div>
+                            <!--Texto de parágrafo na página-->
                             <p>-47%</p>
                         </div>
                         
@@ -788,6 +797,7 @@
             </section>
         </section>
     </main>
+    <!--Representa uma divisão na página-->
     <hr />
     <div id="produto1" class="modal">
         <div class="content">

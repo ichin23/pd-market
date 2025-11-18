@@ -12,793 +12,798 @@
     
     <!--Define a seção principal da aplicação-->
     <main>
-        <input type="checkbox" id="showFiltros" name="showFiltros" hidden/>
-        <!--Define um conteúdo secundário relacionado com o conteúdo principal -->
-        <aside id="filtroProd">
-            <span id="titulo">
-                <span class="material-symbols-outlined">filter_alt</span>
-                Filtros
-            </span>
-            <!--Define uma parte com várias entradas relacionadas e que são encaminhadas juntas-->
-            <form>
-                <!--Faz um subconjunto no formulário com entradas que tratam do mesmo assunto-->
-                <fieldset id="precoField">
-                    <!--Dá um título pro subconjunto-->
-                    <legend>Preço</legend>
-                    <div>
-                        <h4>Min: </h4>
-                        <input  name="minPreco" placeholder="R$ 0,01"/>
-                    </div>
-                    <div>
-                        <h4>Max: </h4>
-                        <input name="maxPreco" placeholder="R$ 999,99"/>
-                    </div>
-                </fieldset>
+        <h2>Nossos Produtos</h2>
+        <div>
+            <input type="checkbox" id="showFiltros" name="showFiltros" hidden/>
+            <!--Define um conteúdo secundário relacionado com o conteúdo principal -->
+            <aside id="filtroProd">
                 <div>
-                    <label for="corSelect">Cor</label>
-                    <!--Uma entrada da dados com opção de seleção entre opções ao invés de o usuário digital-->
-                    <select name="cor" id="corSelect">
-                        <option>--Selecione--</option>
-                        <option value="vermelho">Vermelho</option>
-                        <option value="azul">Azul</option>
-                        <option value="verde">Verde</option>
-                        <option value="amarelo">Amarelo</option>
-                        <option value="preto">Preto</option>
-                        <option value="branco">Branco</option>
-                        <option value="laranja">Laranja</option>
+                    <span id="titulo">
+                        <span class="material-symbols-outlined">filter_alt</span>
+                        Filtros
+                    </span>
+                    <!--Define uma parte com várias entradas relacionadas e que são encaminhadas juntas-->
+                    <form>
+                        <!--Faz um subconjunto no formulário com entradas que tratam do mesmo assunto-->
+                        <fieldset id="precoField">
+                            <!--Dá um título pro subconjunto-->
+                            <legend>Preço</legend>
+                            <div>
+                                <h4>Min: </h4>
+                                <input  name="minPreco" placeholder="R$ 0,01"/>
+                            </div>
+                            <div>
+                                <h4>Max: </h4>
+                                <input name="maxPreco" placeholder="R$ 999,99"/>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <label for="corSelect">Cor</label>
+                            <!--Uma entrada da dados com opção de seleção entre opções ao invés de o usuário digital-->
+                            <select name="cor" id="corSelect">
+                                <option>--Selecione--</option>
+                                <option value="vermelho">Vermelho</option>
+                                <option value="azul">Azul</option>
+                                <option value="verde">Verde</option>
+                                <option value="amarelo">Amarelo</option>
+                                <option value="preto">Preto</option>
+                                <option value="branco">Branco</option>
+                                <option value="laranja">Laranja</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="categoriaSelect">Categoria</label>
+                            <select name="cateogria" id="categoriaSelect">
+                                <option>--Selecione--</option>
+                                <!--Define um agrupamento de opções dentro do input de seleção-->
+                                <optgroup label="Alimentos">
+                                    <option value="alimentos">Alimentos</option>
+                                    <option value="doces">Doces</option>
+                                    <option value="congelados">Congelados</option>
+                                    <option value="bebidas">Bebidas</option>
+                                </optgroup>
+                                <optgroup label="Limpeza">
+                                    <option value="produtosLimpeza">Produtos de Limpeza</option>
+                                    <option value="produtosLimpeza">Higiene Pessoal</option>
+                                    <option value="produtosLimpeza"></option>
+                                </optgroup>
+                                <option value="utilidades">Utilidades</option>
+                                <option value="fitness">Fitness</option>
+                            </select>
+                        </div>
+                        <fieldset>
+                            <legend>Marca</legend>
+                            <input type="search" placeholder="Buscar..."/>
+                            <div id="marcasContent">
+                                <label>
+                                    <input type="radio" name="marca" value="1">
+                                    3 Corações
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="2">
+                                    Coca-Cola
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="3">
+                                    Nestlé
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="4">
+                                    Porto Alegre
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="5">
+                                    Codil
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="6">
+                                    Qually
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="7">
+                                    Asa
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="8">
+                                    Sadia
+                                </label>
+                            </div>
+                        </fieldset>
+                        <!--Botão de ação dentro da página, nesse caso enviar o filtro de produtos-->
+                        <button>Filtrar (37)</button>
+                        <div id="fecharFiltros">    
+                            <label for="showFiltros">Fechar</label>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+            <section id="containerProdutos">
+                <div> 
+                    <label for="showFiltros">
+                        <span class="material-symbols-outlined">filter_alt</span>
+                        Filtros
+                    </label>
+                    <label for="openSearch">
+                        <input id="searchProdutos" type="search" name="searchProdutos" />
+                        <span class="material-symbols-outlined">search</span>
+                    </label>
+                    <select name="order">
+                        <option>Mais Relevantes</option>
+                        <option>Menor Preço</option>
+                        <option>Menor Preço</option>
                     </select>
                 </div>
-                
-                <div>
-                    <label for="categoriaSelect">Categoria</label>
-                    <select name="cateogria" id="categoriaSelect">
-                        <option>--Selecione--</option>
-                        <!--Define um agrupamento de opções dentro do input de seleção-->
-                        <optgroup label="Alimentos">
-                            <option value="alimentos">Alimentos</option>
-                            <option value="doces">Doces</option>
-                            <option value="congelados">Congelados</option>
-                            <option value="bebidas">Bebidas</option>
-                        </optgroup>
-                        <optgroup label="Limpeza">
-                            <option value="produtosLimpeza">Produtos de Limpeza</option>
-                            <option value="produtosLimpeza">Higiene Pessoal</option>
-                            <option value="produtosLimpeza"></option>
-                        </optgroup>
-                        <option value="utilidades">Utilidades</option>
-                        <option value="fitness">Fitness</option>
-                    </select>
-                </div>
-                <fieldset>
-                    <legend>Marca</legend>
-                    <input type="search" placeholder="Buscar..."/>
-                    <div id="marcasContent">
-                        <label>
-                            <input type="radio" name="marca" value="1">
-                            3 Corações
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="2">
-                            Coca-Cola
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="3">
-                            Nestlé
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="4">
-                            Porto Alegre
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="5">
-                            Codil
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="6">
-                            Qually
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="7">
-                            Asa
-                        </label>
-                        <label>
-                            <input type="radio" name="marca" value="8">
-                            Sadia
-                        </label>
-                    </div>
-                </fieldset>
-                <!--Botão de ação dentro da página, nesse caso enviar o filtro de produtos-->
-                <button>Filtrar (37)</button>
-                <div>    
-                    <label for="showFiltros">Fechar</label>
-                </div>
-            </form>
-        </aside>
-        <section id="containerProdutos">
-            <div> 
-                <label for="showFiltros">
-                    <span class="material-symbols-outlined">filter_alt</span>
-                    Filtros
-                </label>
-                <label for="openSearch">
-                    <input id="searchProdutos" type="search" name="searchProdutos" />
-                    <span class="material-symbols-outlined">search</span>
-                </label>
-                <select name="order">
-                    <option>Mais Relevantes</option>
-                    <option>Menor Preço</option>
-                    <option>Menor Preço</option>
-                </select>
-            </div>
-           
-            <section>
-                <a href="#produto1">
-                    <article class="produtoCard">
-                        <img src="https://imgs.search.brave.com/FGuQXh5LV83MWnyuK030uacPRDtvvzxmIUuGTVKP1bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MjUzOTItTUxVNzQ5/NTk1OTgyNzdfMDMy/MDI0LU8tbWlsaG8t/dmVyZGUtZW0tY29u/c2VydmEtcHJlZGls/ZWN0YS1sYXRhLTE3/MGcud2VicA" />
-                        <h4>Milho Verde Predilecta 170g</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 4,98</s>
-                                <ins>R$ 2,35</ins>
+            
+                <section>
+                    <a href="#produto1">
+                        <article class="produtoCard">
+                            <img src="https://imgs.search.brave.com/FGuQXh5LV83MWnyuK030uacPRDtvvzxmIUuGTVKP1bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MjUzOTItTUxVNzQ5/NTk1OTgyNzdfMDMy/MDI0LU8tbWlsaG8t/dmVyZGUtZW0tY29u/c2VydmEtcHJlZGls/ZWN0YS1sYXRhLTE3/MGcud2VicA" />
+                            <h4>Milho Verde Predilecta 170g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,98</s>
+                                    <ins>R$ 2,35</ins>
+                                </div>
+                                <!--Texto de parágrafo na página-->
+                                <p>-47%</p>
                             </div>
-                            <!--Texto de parágrafo na página-->
-                            <p>-47%</p>
-                        </div>
-                        
-                        <div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto2">
-                    <article class="produtoCard">
-                        <img src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/15165/medium/oleo-de-soja-liza-900ml_10676.png" />
-                        <h4>Óleo de Soja Lisa 900ml</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto2">
+                        <article class="produtoCard">
+                            <img src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/15165/medium/oleo-de-soja-liza-900ml_10676.png" />
+                            <h4>Óleo de Soja Lisa 900ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 10,98</s>
+                                    <ins>R$ 6,45</ins>
+                                </div>
+                                <p>-52%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 10,98</s>
-                                <ins>R$ 6,45</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-52%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto3">
+                        <article class="produtoCard">
+                            <img src="https://arrozcodil.com.br/uploads/images/2020/03/arroz-codil-tradicional.jpg" />
+                            <h4>Arroz Codil Tipo 1 5Kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 28,67</s>
+                                    <ins>R$ 23,24</ins>
+                                </div>
+                                <p>-19%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto3">
-                    <article class="produtoCard">
-                        <img src="https://arrozcodil.com.br/uploads/images/2020/03/arroz-codil-tradicional.jpg" />
-                        <h4>Arroz Codil Tipo 1 5Kg</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto4">
+                        <article class="produtoCard">
+                            <img src="https://arrozcodil.com.br/uploads/images/2020/03/feijao-codil-premium-1584537008.jpg" />
+                            <h4>Feijão Codil Tipo 1 Premium 1Kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 10,98</s>
+                                    <ins>R$ 7,38</ins>
+                                </div>
+                                <p>-32%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 28,67</s>
-                                <ins>R$ 23,24</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-19%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto5">
+                        <article class="produtoCard">
+                            <img src="https://fortatacadista.vteximg.com.br/arquivos/ids/205346-800-800/7896083800247_1_1_1200_72_RGB.jpg?v=637448396423500000" />
+                            <h4>QBoa Água Sanitária 5L</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 20,53</s>
+                                    <ins>R$ 16,40</ins>
+                                </div>
+                                <p>-20%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto4">
-                    <article class="produtoCard">
-                        <img src="https://arrozcodil.com.br/uploads/images/2020/03/feijao-codil-premium-1584537008.jpg" />
-                        <h4>Feijão Codil Tipo 1 Premium 1Kg</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto6">
+                        <article class="produtoCard">
+                            <img src="https://trela.com.br/_next/image?url=https%3A%2F%2Fprod-zapt-images.s3.sa-east-1.amazonaws.com%2Fproducts%2F7c8d3365-8167-494f-9d68-1217499bcfed.png&w=3840&q=75" />
+                            <h4>Pasta de Dente Colgate Tripla Ação</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,99</s>
+                                    <ins>R$ 3,78</ins>
+                                </div>
+                                <p>-24%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 10,98</s>
-                                <ins>R$ 7,38</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-32%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto7">
+                        <article class="produtoCard">
+                            <img src="https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F13007377%2F7464569717_1_xlarge.jpg%3Fv%3D638754357579800000&w=768&q=90" />
+                            <h4>Refrigerante Pepsi Black 1.5L</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 10,99</s>
+                                    <ins>R$ 6,23</ins>
+                                </div>
+                                <p>-43%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto5">
-                    <article class="produtoCard">
-                        <img src="https://fortatacadista.vteximg.com.br/arquivos/ids/205346-800-800/7896083800247_1_1_1200_72_RGB.jpg?v=637448396423500000" />
-                        <h4>QBoa Água Sanitária 5L</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto8">
+                        <article class="produtoCard">
+                            <img src="https://bistek.vtexassets.com/arquivos/ids/204983-800-800?v=638731720010200000&width=800&height=800&aspect=true" />
+                            <h4>Suco Natural One 2l Laranja</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 28,99</s>
+                                    <ins>R$ 16,63</ins> 
+                                </div>
+                                <p>-43%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 20,53</s>
-                                <ins>R$ 16,40</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-20%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto9">
+                        <article class="produtoCard">
+                            <img src="https://farmaciaindiana.vtexassets.com/arquivos/ids/211029-800-1067?v=636827359839370000&width=800&height=1067&aspect=true" />
+                            <h4>Café 3 Corações Tradicional 500g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 35,99</s>
+                                    <ins>R$ 26,38</ins> 
+                                </div>
+                                <p>-27%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                 <a href="#produto6">
-                    <article class="produtoCard">
-                        <img src="https://trela.com.br/_next/image?url=https%3A%2F%2Fprod-zapt-images.s3.sa-east-1.amazonaws.com%2Fproducts%2F7c8d3365-8167-494f-9d68-1217499bcfed.png&w=3840&q=75" />
-                        <h4>Pasta de Dente Colgate Tripla Ação</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto10">
+                        <article class="produtoCard">
+                            <img src="https://drogariasp.vteximg.com.br/arquivos/ids/1126564-1000-1000/Chocolate-KITKAT-4-Fingers-ao-Leite-41-5g428094_0003_6509dbf3c119060be8271626_1.png?v=638557999926430000" />
+                            <h4>Kit Kat ao leite 41,5g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,99</s>
+                                    <ins>R$ 2,86</ins>
+                                </div>
+                                <p>-43%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 4,99</s>
-                                <ins>R$ 3,78</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-24%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto11">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/205951095/197564_1.jpg?v=638977936725700000" />
+                            <h4>Açúcar Refinado União 1Kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,99</s>
+                                    <ins>R$ 4,06</ins>
+                                </div>
+                                <p>-19%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto7">
-                    <article class="produtoCard">
-                        <img src="https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F13007377%2F7464569717_1_xlarge.jpg%3Fv%3D638754357579800000&w=768&q=90" />
-                        <h4>Refrigerante Pepsi Black 1.5L</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto12">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/194167397/fralda-pants-roupinha-huggies-protecao-acolchoada-g-30-unidades-1.jpg?v=638893975073100000" />
+                            <h4>Fralda Pants Huggies G 30 unidades</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 64,99</s>
+                                    <ins>R$ 35,97</ins> 
+                                </div>
+                                <p>-44%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 10,99</s>
-                                <ins>R$ 6,23</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-43%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto13">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/31643626/limpador-multiuso-veja-original-com-10--de-desconto-500ml-1.jpg?v=637776904331170000" />
+                            <h4>Limpador Multiuso Veja Gold 500ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 64,99</s>
+                                    <ins>R$ 35,97</ins> 
+                                </div>
+                                <p>-44%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto8">
-                    <article class="produtoCard">
-                        <img src="https://bistek.vtexassets.com/arquivos/ids/204983-800-800?v=638731720010200000&width=800&height=800&aspect=true" />
-                        <h4>Suco Natural One 2l Laranja</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto14">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/13335267/iog-natural-integral-danone-160g-1.jpg?v=637486482953330000" />
+                            <h4>Iogurte Integral Danone Natural 160g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,19</s>
+                                    <ins>R$ 2,57</ins>
+                                </div>
+                                <p>-39%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 28,99</s>
-                                <ins>R$ 16,63</ins> 
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-43%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto15">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193974697/sabao-em-barra-ype-neutro-800g-1.jpg?v=638882819222700000" />
+                            <h4>Sabão em Barra Ypê Neutro 800g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 11,59</s>
+                                    <ins>R$ 7,37</ins>
+                                </div>
+                                <p>-36%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto9">
-                    <article class="produtoCard">
-                        <img src="https://farmaciaindiana.vtexassets.com/arquivos/ids/211029-800-1067?v=636827359839370000&width=800&height=1067&aspect=true" />
-                        <h4>Café 3 Corações Tradicional 500g</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto16">
+                        <article class="produtoCard">
+                            <img src="https://phygital-files.mercafacil.com/catalogo/uploads/produto/fil_de_peito_de_frango_em_bifes_congelado_sadia_800g_ccdbe36a-fc51-4d0f-99ba-9ba1f790b9a7.png" />
+                            <h4>Filé de Peito de Frango em bife 800g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 24,99</s>
+                                    <ins>R$ 18,22</ins>
+                                </div>
+                                <p>-27%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 35,99</s>
-                                <ins>R$ 26,38</ins> 
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-27%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto17">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/68322423/salmao-inteiro-congelado-kg-1.jpg?v=637947065892570000" />
+                            <h4>Salmão Inteiro Congelado</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 109,99</s>
+                                    <ins>R$ 85,73</ins>
+                                </div>
+                                <p>-22%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto10">
-                    <article class="produtoCard">
-                        <img src="https://drogariasp.vteximg.com.br/arquivos/ids/1126564-1000-1000/Chocolate-KITKAT-4-Fingers-ao-Leite-41-5g428094_0003_6509dbf3c119060be8271626_1.png?v=638557999926430000" />
-                        <h4>Kit Kat ao leite 41,5g</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto18">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/132095395/suco-de-laranja-integral-refrigerado-natural-one-100--suco-900ml-1.jpg?v=638322173425770000" />
+                            <h4>Suco Natural One Laranja 900ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 21,99</s>
+                                    <ins>R$ 9,38</ins>
+                                </div>
+                                <p>-57%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 4,99</s>
-                                <ins>R$ 2,86</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-43%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto19">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/192280291/78936683_1_2_1200_72_RGB.png.png?v=638832650739330000&quality=5" />
+                            <h4>Cerveja Heineken Garrafa 330ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 7,99</s>
+                                    <ins>R$ 3,38</ins>
+                                </div>
+                                <p>-58%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto11">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/205951095/197564_1.jpg?v=638977936725700000" />
-                        <h4>Açúcar Refinado União 1Kg</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto20">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/106444563/cerveja-brahma-duplo-malte-puro-malte-350ml-lata-1.jpg?v=638144901422700000" />
+                            <h4>Cerveja Brahma Duplo Malte Puro Malte 350ml Lata</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 7,99</s>
+                                    <ins>R$ 3,38</ins>
+                                </div>
+                                <p>-58%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 4,99</s>
-                                <ins>R$ 4,06</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-19%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto21">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/185707347/macarrao-tortelini-tricolori-carrefour-500g-1.jpg?v=638757473671800000" />
+                            <h4>Macarrão Tortelini Tricolori Carrefour 500g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 8,99</s>
+                                    <ins>R$ 4,63</ins>
+                                </div>
+                                <p>-48%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto12">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/194167397/fralda-pants-roupinha-huggies-protecao-acolchoada-g-30-unidades-1.jpg?v=638893975073100000" />
-                        <h4>Fralda Pants Huggies G 30 unidades</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto22">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/215242/5623740_1.jpg?v=637272520425830000" />
+                            <h4>Barra de Cereal Sabor Avelã + Nibs de Cacau Zero Enjoy 50g 2 Unidades</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 7,99</s>
+                                    <ins>R$ 4,32</ins>
+                                </div>
+                                <p>-46%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 64,99</s>
-                                <ins>R$ 35,97</ins> 
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-44%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto23">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/187173713/kit-shampoo-300ml---condicionador-190ml-seda-ceramidas-1.jpg?v=638785045313000000" />
+                            <h4>Kit Shampoo 300ml + Condicionador 190ml Seda Brilho Ceramidas</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 19,99</s>
+                                    <ins>R$ 12,32</ins>
+                                </div>
+                                <p>-38%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto13">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/31643626/limpador-multiuso-veja-original-com-10--de-desconto-500ml-1.jpg?v=637776904331170000" />
-                        <h4>Limpador Multiuso Veja Gold 500ml</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto24">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/210057/5444071_1.jpg?v=637272511115000000" />
+                            <h4>Shampoo 2 em 1 Anticaspa Clear Men Limpeza Diária 400ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 29,99</s>
+                                    <ins>R$ 16,54</ins>
+                                </div>
+                                <p>-45%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 64,99</s>
-                                <ins>R$ 35,97</ins> 
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-44%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto25">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/191141/7099541_1.jpg?v=637272424648630000" />
+                            <h4>Sabonete em Barra Corporal Phebo Amazonian 90g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 29,99</s>
+                                    <ins>R$ 16,54</ins>
+                                </div>
+                                <p>-45%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto14">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/13335267/iog-natural-integral-danone-160g-1.jpg?v=637486482953330000" />
-                        <h4>Iogurte Integral Danone Natural 160g</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto26">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/159736102/41d6f13b31b3413299bd7d6a512b3ecb.jpg?v=638540640349230000" />
+                            <h4>Sabonete em Barra Corporal Francis Clássico Rosas de Versalles 90g - Branco</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,59</s>
+                                    <ins>R$ 2,38</ins>
+                                </div>
+                                <p>-48%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 4,19</s>
-                                <ins>R$ 2,57</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-39%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto27">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193817565/mostarda-escura-heinz-235g-1.jpg?v=638875808143470000" />
+                            <h4>Mostarda Escura Heinz 235g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 22,59</s>
+                                    <ins>R$ 12,76</ins>
+                                </div>
+                                <p>-44%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto15">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193974697/sabao-em-barra-ype-neutro-800g-1.jpg?v=638882819222700000" />
-                        <h4>Sabão em Barra Ypê Neutro 800g</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto28">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/138029625/molho-de-pimenta-sriracha-kalassi-200ml-1.jpg?v=638442884153530000" />
+                            <h4>Molho de Pimenta <u>Sriracha Kalassi</u> 200ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 34,59</s>
+                                    <ins>R$ 18,96</ins>
+                                </div>
+                                <p>-45%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 11,59</s>
-                                <ins>R$ 7,37</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-36%</p>
-                        </div>
-                        
-                        <div>
+                        </article>
+                    </a>
+                    <a href="#produto29">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
+                            <h4>Lâmpada Superled Ouro Branca Bivolt 12W 3000K Ourolux Bulbo A</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 6,59</s>
+                                    <ins>R$ 3,28</ins>
+                                </div>
+                                <p>-50%</p>
+                            </div>
+                            
                             <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto16">
-                    <article class="produtoCard">
-                        <img src="https://phygital-files.mercafacil.com/catalogo/uploads/produto/fil_de_peito_de_frango_em_bifes_congelado_sadia_800g_ccdbe36a-fc51-4d0f-99ba-9ba1f790b9a7.png" />
-                        <h4>Filé de Peito de Frango em bife 800g</h4>
-                        <div class="preco">
+                        </article>
+                    </a>
+                    <a href="#produto30">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
+                            <h4>Carvão Briquete Pérola Negra Vegetal Forte 4kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 34,99</s>
+                                    <ins>R$ 21,37</ins>
+                                </div>
+                                <p>-39%</p>
+                            </div>
+                            
                             <div>
-                                <s>R$ 24,99</s>
-                                <ins>R$ 18,22</ins>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
                             </div>
-                            <p>-27%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto17">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/68322423/salmao-inteiro-congelado-kg-1.jpg?v=637947065892570000" />
-                        <h4>Salmão Inteiro Congelado</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 109,99</s>
-                                <ins>R$ 85,73</ins>
-                            </div>
-                            <p>-22%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto18">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/132095395/suco-de-laranja-integral-refrigerado-natural-one-100--suco-900ml-1.jpg?v=638322173425770000" />
-                        <h4>Suco Natural One Laranja 900ml</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 21,99</s>
-                                <ins>R$ 9,38</ins>
-                            </div>
-                            <p>-57%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto19">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/192280291/78936683_1_2_1200_72_RGB.png.png?v=638832650739330000&quality=5" />
-                        <h4>Cerveja Heineken Garrafa 330ml</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 7,99</s>
-                                <ins>R$ 3,38</ins>
-                            </div>
-                            <p>-58%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto20">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/106444563/cerveja-brahma-duplo-malte-puro-malte-350ml-lata-1.jpg?v=638144901422700000" />
-                        <h4>Cerveja Brahma Duplo Malte Puro Malte 350ml Lata</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 7,99</s>
-                                <ins>R$ 3,38</ins>
-                            </div>
-                            <p>-58%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto21">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/185707347/macarrao-tortelini-tricolori-carrefour-500g-1.jpg?v=638757473671800000" />
-                        <h4>Macarrão Tortelini Tricolori Carrefour 500g</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 8,99</s>
-                                <ins>R$ 4,63</ins>
-                            </div>
-                            <p>-48%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto22">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/215242/5623740_1.jpg?v=637272520425830000" />
-                        <h4>Barra de Cereal Sabor Avelã + Nibs de Cacau Zero Enjoy 50g 2 Unidades</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 7,99</s>
-                                <ins>R$ 4,32</ins>
-                            </div>
-                            <p>-46%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto23">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/187173713/kit-shampoo-300ml---condicionador-190ml-seda-ceramidas-1.jpg?v=638785045313000000" />
-                        <h4>Kit Shampoo 300ml + Condicionador 190ml Seda Brilho Ceramidas</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 19,99</s>
-                                <ins>R$ 12,32</ins>
-                            </div>
-                            <p>-38%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto24">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/210057/5444071_1.jpg?v=637272511115000000" />
-                        <h4>Shampoo 2 em 1 Anticaspa Clear Men Limpeza Diária 400ml</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 29,99</s>
-                                <ins>R$ 16,54</ins>
-                            </div>
-                            <p>-45%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto25">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/191141/7099541_1.jpg?v=637272424648630000" />
-                        <h4>Sabonete em Barra Corporal Phebo Amazonian 90g</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 29,99</s>
-                                <ins>R$ 16,54</ins>
-                            </div>
-                            <p>-45%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto26">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/159736102/41d6f13b31b3413299bd7d6a512b3ecb.jpg?v=638540640349230000" />
-                        <h4>Sabonete em Barra Corporal Francis Clássico Rosas de Versalles 90g - Branco</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 4,59</s>
-                                <ins>R$ 2,38</ins>
-                            </div>
-                            <p>-48%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto27">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193817565/mostarda-escura-heinz-235g-1.jpg?v=638875808143470000" />
-                        <h4>Mostarda Escura Heinz 235g</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 22,59</s>
-                                <ins>R$ 12,76</ins>
-                            </div>
-                            <p>-44%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto28">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/138029625/molho-de-pimenta-sriracha-kalassi-200ml-1.jpg?v=638442884153530000" />
-                        <h4>Molho de Pimenta <u>Sriracha Kalassi</u> 200ml</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 34,59</s>
-                                <ins>R$ 18,96</ins>
-                            </div>
-                            <p>-45%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto29">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
-                        <h4>Lâmpada Superled Ouro Branca Bivolt 12W 3000K Ourolux Bulbo A</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 6,59</s>
-                                <ins>R$ 3,28</ins>
-                            </div>
-                            <p>-50%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
-                <a href="#produto30">
-                    <article class="produtoCard">
-                        <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
-                        <h4>Carvão Briquete Pérola Negra Vegetal Forte 4kg</h4>
-                        <div class="preco">
-                            <div>
-                                <s>R$ 34,99</s>
-                                <ins>R$ 21,37</ins>
-                            </div>
-                            <p>-39%</p>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <button>-</button>
-                                <input type="number" value="1" min="0"/>
-                                <button>+</button>
-                            </div>
-                            <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
-                        </div>
-                    </article>
-                </a>
+                        </article>
+                    </a>
 
+                </section>
             </section>
-        </section>
+        </div>
+        <hr />
     </main>
     <!--Representa uma divisão na página-->
-    <hr />
     <div id="produto1" class="modal">
         <div class="content">
             <img src="https://imgs.search.brave.com/FGuQXh5LV83MWnyuK030uacPRDtvvzxmIUuGTVKP1bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MjUzOTItTUxVNzQ5/NTk1OTgyNzdfMDMy/MDI0LU8tbWlsaG8t/dmVyZGUtZW0tY29u/c2VydmEtcHJlZGls/ZWN0YS1sYXRhLTE3/MGcud2VicA" />

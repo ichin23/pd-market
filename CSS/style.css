@@ -20,8 +20,14 @@ body{
     overflow-x: hidden;
 }
 
+main > h2{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+    color: var(--secondary);
+}
 
-main{
+main>div{
     width: 100vw;
     display: flex;
 }
@@ -29,6 +35,7 @@ main{
 aside{
     width: 20vw;
     max-width: 400px;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,6 +116,8 @@ aside button{
     color: var(--white);
     cursor: pointer;
 }
+
+#fecharFiltros{display: none;}
 
 #containerProdutos label[for="showFiltros"]{
     display: none;
@@ -341,8 +350,16 @@ aside button{
         width: 90vw;
     }
 
+    #containerProdutos{
+        padding: 20px 10px;
+    }
+
     #containerProdutos label{
         width: min-content;
+    }
+
+    #containerProdutos > section{
+        padding: 10px;
     }
 
     #searchProdutos{
@@ -372,13 +389,33 @@ aside button{
     #showFiltros:checked ~ #filtroProd{
         display: block;
         position: absolute;
-        background-color: var(--white);
+        top: 0;
+        right: 0;
+        anchor-name: --showFiltro;
         width: 100vw;
+        height: 100vh;
+        max-width: none;
+        background-color: rgba(0,0,0,0.5);
+    }
+    
+    #filtroProd > div{
+        width: 100vw;
+        position: absolute;
+        position-anchor: --showFiltro;
+        position-area: top left;
+        background-color: var(--white);
         max-width: none;
         padding: 50px;
         bottom: 0;
         right: 0;
     }
+
+    #fecharFiltros{display: block;}
+
+    #containerProdutos > div{
+        justify-content: space-around;
+    }
+
 }
 
 @media (max-width: 500px) {

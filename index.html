@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PD Market</title>
+    <base href="#" target="_blank">
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Audiowide" rel="stylesheet">
+    
+    <script></script>
 </head>
 <body>
-    <h1>PD Market</h1>
+    <section id="contato">
+        <form>
+            <h2>Entre em contato</h2>
+            <input list="contatos" name="tipoContato" id="tipoContato" placeholder="Tipo de Contato">
+            <datalist id="contatos">
+                <option value="Devolução">
+                <option value="Dúvidas">
+                <option value="Sugestões" > 
+                <option value="Extorno">
+                <option value="Reclamações" >
+            </datalist>
+
+            <input name="nome" placeholder="Nome"/>
+            <input type="email" name="email" placeholder="E-mail"/>
+            <input type="tel" name="celular" placeholder="Celular"/>
+            <textarea name="mensagem" placeholder="Mensagem"></textarea>
+            <progress value="0.3">30%</progress>
+            <button>Enviar</button>
+            <output hidden>Mensagem Enviada!</output>
+        </form>
+    </section>
 </body>
 </html>

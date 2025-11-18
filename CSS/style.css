@@ -31,8 +31,10 @@ body{
 
 #carrosselSlider{
     display: flex;
-    width: calc(100vw*5);
+    width: 500%;
+    transition: transform .6s ease;
     scroll-snap-type: x mandatory;
+    anchor-name: --carrosselAnchor;
     animation: scrollCarrossel 15s linear infinite;
 }
 
@@ -114,6 +116,41 @@ body{
     color: var(--secondary);
     font-weight: 800;
 }
+
+#carrosselButtons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    bottom: 20px;
+    position: absolute;
+    position-anchor: --carrosselAnchor;
+    position-area: center bottom;
+}
+
+#sliderBtn1:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(0);
+}
+
+#sliderBtn2:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-100%);
+}
+#sliderBtn3:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(0);
+}
+
+#sliderBtn4:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-100%);
+}
+#sliderBtn5:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(0);
+}
+
 
 @media (max-width: 500px){
     .cardCarrossel strong{

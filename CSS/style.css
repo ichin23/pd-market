@@ -24,29 +24,42 @@ body{
     padding: 20px 30px;
     text-align: justify;
     display: flex;
+    justify-content: center;
+}
+
+#contentSobre{
+    max-width: 1000px;
+    display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
-
-
-#sobre  >h2{
+#contentSobre  >h2{
     text-align: center;
+    margin: 20px 10px
 }
 
-#sobre >blockquote{
+#contentSobre >blockquote{
     margin: 20px 5px;
 }
 
-#sobre th, #sobre td {
+#contentSobre th, #contentSobre td {
   border-bottom: 1px solid #3f3f3f;
   padding: 5px;
 }
 
-#sobre thead{
+#contentSobre thead{
     background-color: var(--primary);
     color: var(--white);
     text-align: center;
 }
 
-#sobre tr:nth-child(even) {background-color: var(--blueLight);}
+#contentSobre tr:nth-child(even) {background-color: var(--blueLight);}
+
+#contentSobre meter{
+    margin: 30px 10px;
+    height: 20px;
+    width: 100vw;
+    max-width: 300px;
+}

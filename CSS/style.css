@@ -24,17 +24,13 @@ body{
 }
 
 #carrossel{ 
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    anchor-name: --carrossel;
+    overflow-x: clip;
 }
 
 #carrosselSlider{
     display: flex;
     width: 500%;
     transition: transform .6s ease;
-    scroll-snap-type: x mandatory;
-    anchor-name: --carrosselAnchor;
     animation: scrollCarrossel 15s linear infinite;
 }
 
@@ -81,7 +77,6 @@ body{
     100%{
         transform: translateX(0%);
     }
-    
 }
 
 
@@ -90,14 +85,21 @@ body{
     scroll-snap-align: start;
     padding: 50px;
     padding-top: 200px;
+    height: min-content;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+.cardCarrossel img{
+    width: 500px;
+    height: 500px;
+}
+
 .cardCarrossel>div{
     display: flex;
     flex-direction: column;
+    height: min-content;
 }
 
 .cardCarrossel strong{
@@ -117,15 +119,40 @@ body{
     font-weight: 800;
 }
 
-#carrosselButtons{
+.cardCarrossel a{
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    background-color: var(--secondary);
+    width: fit-content;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.sliderBtn{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#labelsControle{
+    width: 100%;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
-    bottom: 20px;
-    position: absolute;
-    position-anchor: --carrosselAnchor;
-    position-area: center bottom;
+}
+
+#labelsControle > label{
+    padding: 10px;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+}
+
+#sliderBtn1:checked ~ label[for="sliderBtn1"]{
+    background-color: var(--secondary);
+    color: var(--white)
 }
 
 #sliderBtn1:checked ~ #carrosselSlider{
@@ -139,16 +166,16 @@ body{
 }
 #sliderBtn3:checked ~ #carrosselSlider{
     animation: none;
-    transform: translateX(0);
+    transform: translateX(-200%);
 }
 
 #sliderBtn4:checked ~ #carrosselSlider{
     animation: none;
-    transform: translateX(-100%);
+    transform: translateX(-300%);
 }
 #sliderBtn5:checked ~ #carrosselSlider{
     animation: none;
-    transform: translateX(0);
+    transform: translateX(-400%);
 }
 
 

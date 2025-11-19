@@ -8,18 +8,17 @@
     <!--Conexão com arquivo exterior-->
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Audiowide" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=visibility" />
 </head>
 <body>
     <!--Separa partes da estrutura do site -->
     <section id="carrossel">
-        <div id="carrosselButtons">
-            <input type="radio" name="carrosselPosition" id="sliderBtn1"/>
-            <input type="radio" name="carrosselPosition" id="sliderBtn2"/>
-            <input type="radio" name="carrosselPosition" id="sliderBtn3"/>
-            <input type="radio" name="carrosselPosition" id="sliderBtn4"/>
-            <input type="radio" name="carrosselPosition" id="sliderBtn5"/>
-        </div>
-        
+        <input type="radio" name="carrosselPosition" class="sliderBtn" id="sliderBtn1" checked  />
+        <input type="radio" name="carrosselPosition" class="sliderBtn" id="sliderBtn2"/>
+        <input type="radio" name="carrosselPosition" class="sliderBtn" id="sliderBtn3"/>
+        <input type="radio" name="carrosselPosition" class="sliderBtn" id="sliderBtn4"/>
+        <input type="radio" name="carrosselPosition" class="sliderBtn" id="sliderBtn5"/>
+
         <div id="carrosselSlider">
             <!--Define um conteúdo independente na página-->
             <article class="cardCarrossel" style="background-color: var(--brown);">
@@ -32,6 +31,7 @@
                     <s>R$ 38,97</s>
                     <!--Substitui um valor que deletado ou invalidado-->
                     <ins>R$ 28,48</ins>
+                    <a href="#produto1"><span class="material-symbols-outlined">visibility</span>Ver Oferta</a>
                 </div>
             </article>
             <article class="cardCarrossel" style="background-color: var(--red);">
@@ -40,6 +40,7 @@
                     <strong>5 KitKat</strong>
                     <s>R$ 17,80</s>
                     <ins>R$ 9,37</ins>
+                    <a href="#produto1"><span class="material-symbols-outlined">visibility</span>Ver Oferta</a>
                 </div>
             </article>
             <article class="cardCarrossel" style="background-color: var(--redLight);">
@@ -48,6 +49,7 @@
                     <strong>Peito de Frango Sadia</strong>
                     <s>R$ 24,97</s>
                     <ins>R$ 17,76</ins>
+                    <a href="#produto1"><span class="material-symbols-outlined">visibility</span>Ver Oferta</a>
                 </div>
             </article>
             <article class="cardCarrossel" style="background-color: var(--green);">
@@ -56,6 +58,7 @@
                     <strong>Suco 2L Natural One</strong>
                     <s>R$ 27,97</s>
                     <ins>R$ 23,89</ins>
+                    <a href="#produto1"><span class="material-symbols-outlined">visibility</span>Ver Oferta</a>
                 </div>
             </article>
             <article class="cardCarrossel" style="background-color: var(--red);">
@@ -64,10 +67,17 @@
                     <strong>Leite Fermentado Yakult</strong>
                     <s>R$ 15,48</s>
                     <ins>R$ 11,67</ins>
+                    <a href="#produto1"><span class="material-symbols-outlined">visibility</span>Ver Oferta</a>
                 </div>
             </article>
         </div>
-        
+        <div id="labelsControle">
+            <label for="sliderBtn1">1</label>
+            <label for="sliderBtn2">2</label>
+            <label for="sliderBtn3">3</label>
+            <label for="sliderBtn4">4</label>
+            <label for="sliderBtn5">5</label>
+        </div>
     </section>
 </body>
 </html>

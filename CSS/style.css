@@ -83,3 +83,43 @@ body{
     margin-right: 15%;
     align-self: end;
 }
+
+#contentSobre details picture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contentSobre section{
+    width: 100%;
+    margin: 30px 20px;
+    display:flex;
+    flex-direction: column;
+}
+
+#contentSobre section > div{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#contentSobre section h2{
+    text-align: center;
+}
+#contentSobre section embed{
+    align-self: center;
+}
+
+#contentSobre dl{
+    padding: 12px;
+}
+
+#contentSobre dt{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#contentSobre dd{
+    padding-left: 20px;
+    margin-bottom: 20px;
+}

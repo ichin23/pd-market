@@ -31,7 +31,7 @@ body{
     display: flex;
     width: 500%;
     transition: transform .6s ease;
-    animation: scrollCarrossel 15s linear infinite;
+    animation: scrollCarrossel 20s linear infinite;
 }
 
 #carrosselSlider:hover{
@@ -44,6 +44,9 @@ body{
 
 @keyframes scrollCarrossel {
     0%{
+        transform: translateX(0);
+    }
+    5%{
         transform: translateX(0);
     }
     10%{

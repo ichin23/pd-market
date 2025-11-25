@@ -351,6 +351,15 @@ label[for=menuOpen]{
         font-size: 2em;
     }
 
+    .cardCarrossel{
+        height: 90vh;
+    }
+
+    .cardCarrossel img{
+        width: 70vw;
+        height: auto;
+    }
+
     #carrossel::scroll-button(right), #carrossel::scroll-button(left){
         width: 50px;
         height: 50px;
@@ -360,6 +369,10 @@ label[for=menuOpen]{
 
 
 /* Seção categorias */
+#categoriasSec {
+    width: 100vw;
+}
+
 #categoriasSec > h2{
     text-align: center;
     font-size: 30px;
@@ -369,7 +382,7 @@ label[for=menuOpen]{
 #categoriasSec div{
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: scroll;
     width: 100vw;
 }
 
@@ -718,8 +731,10 @@ aside button{
 
     .modal .content{
         max-width: none;
+        max-height: 80vh;
         width: 100vw;
         flex-direction: column;
+        overflow-y: scroll;
         border-radius: 12px 12px 0 0;
     }
     .content img {
@@ -765,9 +780,10 @@ aside button{
 
     #showFiltros:checked ~ #filtroProd{
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
+        z-index: 999;
         anchor-name: --showFiltro;
         width: 100vw;
         height: 100vh;
@@ -785,6 +801,7 @@ aside button{
         padding: 50px;
         bottom: 0;
         right: 0;
+        border-radius: 12px 12px 0 0;
     }
 
     #fecharFiltros{display: block;}
@@ -994,7 +1011,7 @@ footer > address{
     flex: 1;
 }
 
-a[href="#produtos"] {
+footer a[href="#produtos"] {
     background-color: var(--primary);
     text-decoration: none;
     color: var(--white);

@@ -355,3 +355,41 @@ label[for=menuOpen]{
         font-size: 20px;
     }
 }
+
+
+/* Seção categorias */
+#categoriasSec > h2{
+    text-align: center;
+    font-size: 30px;
+    color: var(--secondary);
+}
+
+#categoriasSec div{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    width: 100vw;
+}
+
+#categoriasSec figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    aspect-ratio: 1;
+    transition: all 200ms;
+}
+
+#categoriasSec figure:hover{
+    background-color: var(--secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#categoriasSec img{
+    min-width: 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}

@@ -12,12 +12,18 @@
     --secondary: #E0BB24;
     --blueHover: #dbefff;
     --blueLight: #a8d1f1;
+    --red: #cf432a;
+    --redLight: #e98a79;
+    --green: #3fc22e;
+    --brown: #7D2D0A;
 }
 
 body{
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
+
+/* Seção Header */
 
 header{
     display: flex;
@@ -125,12 +131,6 @@ label[for=menuOpen]{
     border-radius: 50%;
 }
 
-main{
-    background-color: var(--primary);
-    width: 100vw;
-    height: 200vh;
-}
-
 @media (max-width: 900px) {
     header > div {
         position: static;
@@ -182,3 +182,174 @@ main{
     }
 }
 
+/* Seção Carrossel */
+#carrossel{ 
+    overflow-x: clip;
+}
+
+#carrosselSlider{
+    display: flex;
+    width: 500%;
+    transition: transform .6s ease;
+    animation: scrollCarrossel 20s linear infinite;
+}
+
+#carrosselSlider:hover{
+    animation-play-state: paused;
+}
+
+#carrossel::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes scrollCarrossel {
+    0%{
+        transform: translateX(0);
+    }
+    5%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(-100%);
+    }
+    20%{
+        transform: translatex(-100%);
+    }
+    30%{
+        transform: translatex(-200%);
+    }
+    40%{
+        transform: translatex(-200%);
+    }
+
+    50%{
+        transform: translatex(-300%);
+    }
+    60%{
+        transform: translatex(-300%);
+    }
+    70%{
+        transform: translatex(-400%);
+    }
+    80%{
+        transform: translatex(-400%);
+    }
+    90%{
+        transform: translatex(0%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+.cardCarrossel{
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    padding: 50px;
+    padding-top: 200px;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardCarrossel img{
+    width: 500px;
+    height: 500px;
+}
+
+.cardCarrossel>div{
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+
+.cardCarrossel strong{
+    font-size: 4em;
+    color: var(--white);
+}
+
+.cardCarrossel s{
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.cardCarrossel ins{
+    text-decoration: none;
+    font-size: 3em;
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.cardCarrossel a{
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    background-color: var(--secondary);
+    width: fit-content;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.sliderBtn{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#labelsControle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+#labelsControle > label{
+    padding: 10px;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+}
+
+#sliderBtn1:checked ~ label[for="sliderBtn1"]{
+    background-color: var(--secondary);
+    color: var(--white)
+}
+
+#sliderBtn1:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(0);
+}
+
+#sliderBtn2:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-100%);
+}
+#sliderBtn3:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-200%);
+}
+
+#sliderBtn4:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-300%);
+}
+#sliderBtn5:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-400%);
+}
+
+
+@media (max-width: 500px){
+    .cardCarrossel strong{
+        font-size: 2em;
+    }
+
+    #carrossel::scroll-button(right), #carrossel::scroll-button(left){
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

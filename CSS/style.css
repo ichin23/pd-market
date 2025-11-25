@@ -139,9 +139,10 @@ main{
     header{
         background-color: var(--blueHover);
     }
-        label[for=menuOpen]{
-            display: block;
-        }
+  
+    label[for=menuOpen]{
+        display: block;
+    }
 
     header > nav {
         position: static;
@@ -161,6 +162,7 @@ main{
         display: flex;
         flex-direction: column;
     }
+  
     #menuOpen:checked ~ header > nav {
         display: flex; 
     }
@@ -179,3 +181,4 @@ main{
         font-size: 14px;
     }
 }
+

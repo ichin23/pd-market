@@ -12,6 +12,10 @@
     --secondary: #E0BB24;
     --blueHover: #dbefff;
     --blueLight: #a8d1f1;
+    --red: #cf432a;
+    --redLight: #e98a79;
+    --green: #3fc22e;
+    --brown: #7D2D0A;
 }
 
 body{
@@ -19,6 +23,341 @@ body{
     overflow-x: hidden;
 }
 
+/* Seção Header */
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+header>div{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    position: absolute;
+    z-index: 999;
+}
+
+#logoHeader{
+    font-family: 'Audiowide', system-ui;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    color: var(--secondary);
+}
+
+#logoHeader>span{
+    font-size: 50px;
+}
+
+header > nav{
+    height: 50px;
+    margin: 15px 0px;
+    border-radius: 12px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    z-index: 999;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 6px;
+    list-style-type: none;
+}
+
+nav li{
+    padding: 8px;
+    border-radius: 8px;
+}
+nav a{
+    text-decoration: none;
+    color: var(--black);
+
+}
+
+nav li:hover{
+    background-color: var(--secondary);
+    
+}
+
+#buttonsHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#buttonsHeader>label{
+    color: var(--secondary);
+}
+
+label[for=menuOpen]{
+    display: none;
+}
+
+#badgeCart{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    cursor: pointer;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#badgeCart>#iconCart{
+    font-size: 2em;
+    color: var(--secondary);
+}
+
+#badgeCart>#cartNumberBadge{
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    background-color: var(--secondary);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+    header > div {
+        position: static;
+    }
+
+    header{
+        background-color: var(--blueHover);
+    }
+  
+    label[for=menuOpen]{
+        display: block;
+    }
+
+    header > nav {
+        position: static;
+        transform: none;
+        height: fit-content;
+        display: none; /* começa escondido */
+        align-items: center;
+        justify-content: center;
+    }
+
+    header > nav > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    #menuOpen:checked ~ header > nav {
+        display: flex; 
+    }
+
+    #logoHeader>span{
+        font-size: 30px;
+    }
+
+    #logoHeader>h1{
+        font-size: 25px;
+    }
+
+    #badgeCart>#cartNumberBadge{
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Seção Carrossel */
+#carrossel{ 
+    overflow-x: clip;
+}
+
+#carrosselSlider{
+    display: flex;
+    width: 500%;
+    transition: transform .6s ease;
+    animation: scrollCarrossel 20s linear infinite;
+}
+
+#carrosselSlider:hover{
+    animation-play-state: paused;
+}
+
+#carrossel::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes scrollCarrossel {
+    0%{
+        transform: translateX(0);
+    }
+    5%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(-100%);
+    }
+    20%{
+        transform: translatex(-100%);
+    }
+    30%{
+        transform: translatex(-200%);
+    }
+    40%{
+        transform: translatex(-200%);
+    }
+
+    50%{
+        transform: translatex(-300%);
+    }
+    60%{
+        transform: translatex(-300%);
+    }
+    70%{
+        transform: translatex(-400%);
+    }
+    80%{
+        transform: translatex(-400%);
+    }
+    90%{
+        transform: translatex(0%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+.cardCarrossel{
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    padding: 50px;
+    padding-top: 200px;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cardCarrossel img{
+    width: 500px;
+    height: 500px;
+}
+
+.cardCarrossel>div{
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+
+.cardCarrossel strong{
+    font-size: 4em;
+    color: var(--white);
+}
+
+.cardCarrossel s{
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.cardCarrossel ins{
+    text-decoration: none;
+    font-size: 3em;
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.cardCarrossel a{
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    background-color: var(--secondary);
+    width: fit-content;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.sliderBtn{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#labelsControle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+#labelsControle > label{
+    padding: 10px;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+}
+
+#sliderBtn1:checked ~ label[for="sliderBtn1"]{
+    background-color: var(--secondary);
+    color: var(--white)
+}
+
+#sliderBtn1:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(0);
+}
+
+#sliderBtn2:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-100%);
+}
+#sliderBtn3:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-200%);
+}
+
+#sliderBtn4:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-300%);
+}
+#sliderBtn5:checked ~ #carrosselSlider{
+    animation: none;
+    transform: translateX(-400%);
+}
+
+
+@media (max-width: 500px){
+    .cardCarrossel strong{
+        font-size: 2em;
+    }
+
+    #carrossel::scroll-button(right), #carrossel::scroll-button(left){
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+
+/* Seção categorias */
 #categoriasSec > h2{
     text-align: center;
     font-size: 30px;
@@ -54,4 +393,3 @@ body{
     border-radius: 50%;
     object-fit: cover;
 }
-

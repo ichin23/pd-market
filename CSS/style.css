@@ -23,6 +23,166 @@ body{
     overflow-x: hidden;
 }
 
+/* Seção Header */
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+header>div{
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    position: absolute;
+}
+
+#logoHeader{
+    font-family: 'Audiowide', system-ui;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    color: var(--secondary);
+}
+
+#logoHeader>span{
+    font-size: 50px;
+}
+
+header > nav{
+    height: 50px;
+    margin: 15px 0px;
+    border-radius: 12px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 6px;
+    list-style-type: none;
+}
+
+nav li{
+    padding: 8px;
+    border-radius: 8px;
+}
+nav a{
+    text-decoration: none;
+    color: var(--black);
+
+}
+
+nav li:hover{
+    background-color: var(--secondary);
+    
+}
+
+#buttonsHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#buttonsHeader>label{
+    color: var(--secondary);
+}
+
+label[for=menuOpen]{
+    display: none;
+}
+
+#badgeCart{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    cursor: pointer;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#badgeCart>#iconCart{
+    font-size: 2em;
+    color: var(--secondary);
+}
+
+#badgeCart>#cartNumberBadge{
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    background-color: var(--secondary);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+    header > div {
+        position: static;
+    }
+
+    header{
+        background-color: var(--blueHover);
+    }
+  
+    label[for=menuOpen]{
+        display: block;
+    }
+
+    header > nav {
+        position: static;
+        transform: none;
+        height: fit-content;
+        display: none; /* começa escondido */
+        align-items: center;
+        justify-content: center;
+    }
+
+    header > nav > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    #menuOpen:checked ~ header > nav {
+        display: flex; 
+    }
+
+    #logoHeader>span{
+        font-size: 30px;
+    }
+
+    #logoHeader>h1{
+        font-size: 25px;
+    }
+
+    #badgeCart>#cartNumberBadge{
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+}
+
+/* Seção Carrossel */
 #carrossel{ 
     overflow-x: clip;
 }

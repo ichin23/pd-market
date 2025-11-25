@@ -12,6 +12,7 @@
     --secondary: #E0BB24;
     --blueHover: #dbefff;
     --blueLight: #a8d1f1;
+    --lightGrey: #525252;
     --grey: #333333;
     --red: #cf432a;
     --redLight: #e98a79;
@@ -962,4 +963,50 @@ aside button{
     background-color: var(--secondary);
     color: var(--white);
     align-self: end;; 
+}
+
+footer{
+    width: 100vw;
+    min-height: 80px;
+    background-color: var(--secondary);
+    display: flex;
+    flex-flow: row wrap;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#informacoesFooter{
+    display: flex;
+    flex-direction: column;
+}
+
+#informacoesFooter>a{
+    text-decoration: none;
+    color: var(--lightGrey);
+}
+footer>div>a:hover{
+    text-decoration: underline;
+}
+
+footer > address{
+    text-align: center;
+    flex: 1;
+}
+
+a[href="#produtos"] {
+    background-color: var(--primary);
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 20px ;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    footer{
+        justify-content: center;
+    }
 }

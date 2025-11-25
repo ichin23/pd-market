@@ -7,10 +7,10 @@
     <title>PD Market</title>
     <!--Conexão com arquivo exterior-->
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu,shopping_bag,shopping_cart,visibility" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Audiowide" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu,shopping_bag,shopping_cart,visibility,filter_alt,search" />
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Audiowide" rel="stylesheet"/>
 </head>
 <body>
     <!--Uma entrada de dados escondida para controlar ações do usuário-->
@@ -147,5 +147,1576 @@
               </figure>
             </div>
       </section>
+    
+    <!--Define a seção principal da aplicação-->
+    <main>
+        <h2>Nossos Produtos</h2>
+        <div>
+            <input type="checkbox" id="showFiltros" name="showFiltros" hidden/>
+            <!--Define um conteúdo secundário relacionado com o conteúdo principal -->
+            <aside id="filtroProd">
+                <div>
+                    <span id="titulo">
+                        <span class="material-symbols-outlined">filter_alt</span>
+                        Filtros
+                    </span>
+                    <!--Define uma parte com várias entradas relacionadas e que são encaminhadas juntas-->
+                    <form>
+                        <!--Faz um subconjunto no formulário com entradas que tratam do mesmo assunto-->
+                        <fieldset id="precoField">
+                            <!--Dá um título pro subconjunto-->
+                            <legend>Preço</legend>
+                            <div>
+                                <h4>Min: </h4>
+                                <input  name="minPreco" placeholder="R$ 0,01"/>
+                            </div>
+                            <div>
+                                <h4>Max: </h4>
+                                <input name="maxPreco" placeholder="R$ 999,99"/>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <label for="corSelect">Cor</label>
+                            <!--Uma entrada da dados com opção de seleção entre opções ao invés de o usuário digital-->
+                            <select name="cor" id="corSelect">
+                                <option>--Selecione--</option>
+                                <option value="vermelho">Vermelho</option>
+                                <option value="azul">Azul</option>
+                                <option value="verde">Verde</option>
+                                <option value="amarelo">Amarelo</option>
+                                <option value="preto">Preto</option>
+                                <option value="branco">Branco</option>
+                                <option value="laranja">Laranja</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="categoriaSelect">Categoria</label>
+                            <select name="cateogria" id="categoriaSelect">
+                                <option>--Selecione--</option>
+                                <!--Define um agrupamento de opções dentro do input de seleção-->
+                                <optgroup label="Alimentos">
+                                    <option value="alimentos">Alimentos</option>
+                                    <option value="doces">Doces</option>
+                                    <option value="congelados">Congelados</option>
+                                    <option value="bebidas">Bebidas</option>
+                                </optgroup>
+                                <optgroup label="Limpeza">
+                                    <option value="produtosLimpeza">Produtos de Limpeza</option>
+                                    <option value="produtosLimpeza">Higiene Pessoal</option>
+                                    <option value="produtosLimpeza"></option>
+                                </optgroup>
+                                <option value="utilidades">Utilidades</option>
+                                <option value="fitness">Fitness</option>
+                            </select>
+                        </div>
+                        <fieldset>
+                            <legend>Marca</legend>
+                            <input type="search" placeholder="Buscar..."/>
+                            <div id="marcasContent">
+                                <label>
+                                    <input type="radio" name="marca" value="1">
+                                    3 Corações
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="2">
+                                    Coca-Cola
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="3">
+                                    Nestlé
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="4">
+                                    Porto Alegre
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="5">
+                                    Codil
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="6">
+                                    Qually
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="7">
+                                    Asa
+                                </label>
+                                <label>
+                                    <input type="radio" name="marca" value="8">
+                                    Sadia
+                                </label>
+                            </div>
+                        </fieldset>
+                        <!--Botão de ação dentro da página, nesse caso enviar o filtro de produtos-->
+                        <button>Filtrar (37)</button>
+                        <div id="fecharFiltros">    
+                            <label for="showFiltros">Fechar</label>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+            <section id="containerProdutos">
+                <div> 
+                    <label for="showFiltros">
+                        <span class="material-symbols-outlined">filter_alt</span>
+                        Filtros
+                    </label>
+                    <label for="openSearch">
+                        <input id="searchProdutos" type="search" name="searchProdutos" />
+                        <span class="material-symbols-outlined">search</span>
+                    </label>
+                    <select name="order">
+                        <option>Mais Relevantes</option>
+                        <option>Menor Preço</option>
+                        <option>Menor Preço</option>
+                    </select>
+                </div>
+            
+                <section>
+                    <a href="#produto1">
+                        <article class="produtoCard">
+                            <img src="https://imgs.search.brave.com/FGuQXh5LV83MWnyuK030uacPRDtvvzxmIUuGTVKP1bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MjUzOTItTUxVNzQ5/NTk1OTgyNzdfMDMy/MDI0LU8tbWlsaG8t/dmVyZGUtZW0tY29u/c2VydmEtcHJlZGls/ZWN0YS1sYXRhLTE3/MGcud2VicA" />
+                            <h4>Milho Verde Predilecta 170g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,98</s>
+                                    <ins>R$ 2,35</ins>
+                                </div>
+                                <!--Texto de parágrafo na página-->
+                                <p>-47%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto2">
+                        <article class="produtoCard">
+                            <img src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/15165/medium/oleo-de-soja-liza-900ml_10676.png" />
+                            <h4>Óleo de Soja Lisa 900ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 10,98</s>
+                                    <ins>R$ 6,45</ins>
+                                </div>
+                                <p>-52%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto3">
+                        <article class="produtoCard">
+                            <img src="https://arrozcodil.com.br/uploads/images/2020/03/arroz-codil-tradicional.jpg" />
+                            <h4>Arroz Codil Tipo 1 5Kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 28,67</s>
+                                    <ins>R$ 23,24</ins>
+                                </div>
+                                <p>-19%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto4">
+                        <article class="produtoCard">
+                            <img src="https://arrozcodil.com.br/uploads/images/2020/03/feijao-codil-premium-1584537008.jpg" />
+                            <h4>Feijão Codil Tipo 1 Premium 1Kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 10,98</s>
+                                    <ins>R$ 7,38</ins>
+                                </div>
+                                <p>-32%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto5">
+                        <article class="produtoCard">
+                            <img src="https://fortatacadista.vteximg.com.br/arquivos/ids/205346-800-800/7896083800247_1_1_1200_72_RGB.jpg?v=637448396423500000" />
+                            <h4>QBoa Água Sanitária 5L</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 20,53</s>
+                                    <ins>R$ 16,40</ins>
+                                </div>
+                                <p>-20%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto6">
+                        <article class="produtoCard">
+                            <img src="https://trela.com.br/_next/image?url=https%3A%2F%2Fprod-zapt-images.s3.sa-east-1.amazonaws.com%2Fproducts%2F7c8d3365-8167-494f-9d68-1217499bcfed.png&w=3840&q=75" />
+                            <h4>Pasta de Dente Colgate Tripla Ação</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,99</s>
+                                    <ins>R$ 3,78</ins>
+                                </div>
+                                <p>-24%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto7">
+                        <article class="produtoCard">
+                            <img src="https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F13007377%2F7464569717_1_xlarge.jpg%3Fv%3D638754357579800000&w=768&q=90" />
+                            <h4>Refrigerante Pepsi Black 1.5L</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 10,99</s>
+                                    <ins>R$ 6,23</ins>
+                                </div>
+                                <p>-43%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto8">
+                        <article class="produtoCard">
+                            <img src="https://bistek.vtexassets.com/arquivos/ids/204983-800-800?v=638731720010200000&width=800&height=800&aspect=true" />
+                            <h4>Suco Natural One 2l Laranja</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 28,99</s>
+                                    <ins>R$ 16,63</ins> 
+                                </div>
+                                <p>-43%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto9">
+                        <article class="produtoCard">
+                            <img src="https://farmaciaindiana.vtexassets.com/arquivos/ids/211029-800-1067?v=636827359839370000&width=800&height=1067&aspect=true" />
+                            <h4>Café 3 Corações Tradicional 500g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 35,99</s>
+                                    <ins>R$ 26,38</ins> 
+                                </div>
+                                <p>-27%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto10">
+                        <article class="produtoCard">
+                            <img src="https://drogariasp.vteximg.com.br/arquivos/ids/1126564-1000-1000/Chocolate-KITKAT-4-Fingers-ao-Leite-41-5g428094_0003_6509dbf3c119060be8271626_1.png?v=638557999926430000" />
+                            <h4>Kit Kat ao leite 41,5g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,99</s>
+                                    <ins>R$ 2,86</ins>
+                                </div>
+                                <p>-43%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto11">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/205951095/197564_1.jpg?v=638977936725700000" />
+                            <h4>Açúcar Refinado União 1Kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,99</s>
+                                    <ins>R$ 4,06</ins>
+                                </div>
+                                <p>-19%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto12">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/194167397/fralda-pants-roupinha-huggies-protecao-acolchoada-g-30-unidades-1.jpg?v=638893975073100000" />
+                            <h4>Fralda Pants Huggies G 30 unidades</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 64,99</s>
+                                    <ins>R$ 35,97</ins> 
+                                </div>
+                                <p>-44%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto13">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/31643626/limpador-multiuso-veja-original-com-10--de-desconto-500ml-1.jpg?v=637776904331170000" />
+                            <h4>Limpador Multiuso Veja Gold 500ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 64,99</s>
+                                    <ins>R$ 35,97</ins> 
+                                </div>
+                                <p>-44%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto14">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/13335267/iog-natural-integral-danone-160g-1.jpg?v=637486482953330000" />
+                            <h4>Iogurte Integral Danone Natural 160g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,19</s>
+                                    <ins>R$ 2,57</ins>
+                                </div>
+                                <p>-39%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto15">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193974697/sabao-em-barra-ype-neutro-800g-1.jpg?v=638882819222700000" />
+                            <h4>Sabão em Barra Ypê Neutro 800g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 11,59</s>
+                                    <ins>R$ 7,37</ins>
+                                </div>
+                                <p>-36%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto16">
+                        <article class="produtoCard">
+                            <img src="https://phygital-files.mercafacil.com/catalogo/uploads/produto/fil_de_peito_de_frango_em_bifes_congelado_sadia_800g_ccdbe36a-fc51-4d0f-99ba-9ba1f790b9a7.png" />
+                            <h4>Filé de Peito de Frango em bife 800g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 24,99</s>
+                                    <ins>R$ 18,22</ins>
+                                </div>
+                                <p>-27%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto17">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/68322423/salmao-inteiro-congelado-kg-1.jpg?v=637947065892570000" />
+                            <h4>Salmão Inteiro Congelado</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 109,99</s>
+                                    <ins>R$ 85,73</ins>
+                                </div>
+                                <p>-22%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto18">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/132095395/suco-de-laranja-integral-refrigerado-natural-one-100--suco-900ml-1.jpg?v=638322173425770000" />
+                            <h4>Suco Natural One Laranja 900ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 21,99</s>
+                                    <ins>R$ 9,38</ins>
+                                </div>
+                                <p>-57%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto19">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/192280291/78936683_1_2_1200_72_RGB.png.png?v=638832650739330000&quality=5" />
+                            <h4>Cerveja Heineken Garrafa 330ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 7,99</s>
+                                    <ins>R$ 3,38</ins>
+                                </div>
+                                <p>-58%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto20">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/106444563/cerveja-brahma-duplo-malte-puro-malte-350ml-lata-1.jpg?v=638144901422700000" />
+                            <h4>Cerveja Brahma Duplo Malte Puro Malte 350ml Lata</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 7,99</s>
+                                    <ins>R$ 3,38</ins>
+                                </div>
+                                <p>-58%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto21">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/185707347/macarrao-tortelini-tricolori-carrefour-500g-1.jpg?v=638757473671800000" />
+                            <h4>Macarrão Tortelini Tricolori Carrefour 500g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 8,99</s>
+                                    <ins>R$ 4,63</ins>
+                                </div>
+                                <p>-48%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto22">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/215242/5623740_1.jpg?v=637272520425830000" />
+                            <h4>Barra de Cereal Sabor Avelã + Nibs de Cacau Zero Enjoy 50g 2 Unidades</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 7,99</s>
+                                    <ins>R$ 4,32</ins>
+                                </div>
+                                <p>-46%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto23">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/187173713/kit-shampoo-300ml---condicionador-190ml-seda-ceramidas-1.jpg?v=638785045313000000" />
+                            <h4>Kit Shampoo 300ml + Condicionador 190ml Seda Brilho Ceramidas</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 19,99</s>
+                                    <ins>R$ 12,32</ins>
+                                </div>
+                                <p>-38%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto24">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/210057/5444071_1.jpg?v=637272511115000000" />
+                            <h4>Shampoo 2 em 1 Anticaspa Clear Men Limpeza Diária 400ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 29,99</s>
+                                    <ins>R$ 16,54</ins>
+                                </div>
+                                <p>-45%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto25">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/191141/7099541_1.jpg?v=637272424648630000" />
+                            <h4>Sabonete em Barra Corporal Phebo Amazonian 90g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 29,99</s>
+                                    <ins>R$ 16,54</ins>
+                                </div>
+                                <p>-45%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto26">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/159736102/41d6f13b31b3413299bd7d6a512b3ecb.jpg?v=638540640349230000" />
+                            <h4>Sabonete em Barra Corporal Francis Clássico Rosas de Versalles 90g - Branco</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 4,59</s>
+                                    <ins>R$ 2,38</ins>
+                                </div>
+                                <p>-48%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto27">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193817565/mostarda-escura-heinz-235g-1.jpg?v=638875808143470000" />
+                            <h4>Mostarda Escura Heinz 235g</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 22,59</s>
+                                    <ins>R$ 12,76</ins>
+                                </div>
+                                <p>-44%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto28">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/138029625/molho-de-pimenta-sriracha-kalassi-200ml-1.jpg?v=638442884153530000" />
+                            <h4>Molho de Pimenta <u>Sriracha Kalassi</u> 200ml</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 34,59</s>
+                                    <ins>R$ 18,96</ins>
+                                </div>
+                                <p>-45%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto29">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
+                            <h4>Lâmpada Superled Ouro Branca Bivolt 12W 3000K Ourolux Bulbo A</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 6,59</s>
+                                    <ins>R$ 3,28</ins>
+                                </div>
+                                <p>-50%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+                    <a href="#produto30">
+                        <article class="produtoCard">
+                            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
+                            <h4>Carvão Briquete Pérola Negra Vegetal Forte 4kg</h4>
+                            <div class="preco">
+                                <div>
+                                    <s>R$ 34,99</s>
+                                    <ins>R$ 21,37</ins>
+                                </div>
+                                <p>-39%</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <button>-</button>
+                                    <input type="number" value="1" min="0"/>
+                                    <button>+</button>
+                                </div>
+                                <button> <span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                            </div>
+                        </article>
+                    </a>
+
+                </section>
+            </section>
+        </div>
+        <hr />
+    </main>
+    <!--Representa uma divisão na página-->
+    <div id="produto1" class="modal">
+        <div class="content">
+            <img src="https://imgs.search.brave.com/FGuQXh5LV83MWnyuK030uacPRDtvvzxmIUuGTVKP1bg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9OUV9OUF85/MjUzOTItTUxVNzQ5/NTk1OTgyNzdfMDMy/MDI0LU8tbWlsaG8t/dmVyZGUtZW0tY29u/c2VydmEtcHJlZGls/ZWN0YS1sYXRhLTE3/MGcud2VicA" />
+            <div>
+                <h2>Milho Verde Predilecta 170g</h2>
+                <p>🌽 O Milho Verde Predilecta em lata de 170g (peso drenado) é a escolha ideal para quem busca praticidade e sabor de campo em suas receitas. Colhidos e envasados rapidamente para garantir o máximo frescor, os grãos são selecionados, macios e já vêm prontos para o consumo (em salmoura, basta escorrer) ou para enriquecer saladas, vinagretes, recheios e todos os seus pratos favoritos.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 4,98</s>
+                        <ins>R$ 2,35</ins>
+                    </div>
+                    <p>-47%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto2" class="modal">
+        <div class="content">
+            <img src="https://io.convertiez.com.br/m/superpaguemenos/shop/products/images/15165/medium/oleo-de-soja-liza-900ml_10676.png" />
+            <div>
+                <h2>Óleo de Soja Liza 900ml</h2>
+                <p>🌻O Óleo de Soja Liza 900ml é um clássico na cozinha brasileira, reconhecido por sua qualidade, pureza e versatilidade. Essencial para o dia a dia, ele é cinco vezes extrafiltrado, o que garante uma pureza superior, ideal para realçar o sabor dos alimentos sem interferir no resultado final das suas receitas. Fonte de Vitamina E, o Liza Soja não contém colesterol (como todo óleo vegetal) nem gordura trans, sendo a opção de confiança para frituras, refogados e temperos de saladas.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 10,98</s>
+                        <ins>R$ 6,45</ins>
+                    </div>
+                    <p>-52%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto3" class="modal">
+        <div class="content">
+            <img src="https://arrozcodil.com.br/uploads/images/2020/03/arroz-codil-tradicional.jpg" />
+            <div>
+                <h2>Arroz Codil Tipo 1 5Kg</h2>
+                <p>🍚 O Arroz Codil Tipo 1 Tradicional 5kg é a escolha clássica para a mesa do brasileiro, unindo tradição, qualidade e alto rendimento. Classificado como Longo Fino Tipo 1, este arroz passa por uma seleção eletrônica rigorosa, garantindo grãos nobres, limpos e sem a necessidade de lavagem prévia, o que proporciona um cozimento rápido e um arroz que fica naturalmente soltinho e branquinho. É o ingrediente básico ideal para acompanhar o feijão de todo dia e para garantir a qualidade de suas refeições em família.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 28,67</s>
+                        <ins>R$ 23,24</ins>
+                    </div>
+                    <p>-19%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto4" class="modal">
+        <div class="content">
+            <img src="https://arrozcodil.com.br/uploads/images/2020/03/feijao-codil-premium-1584537008.jpg" />
+            <div>
+                <h2>Feijão Codil Tipo 1 Premium 1Kg</h2>
+                <p>⚫ O Feijão Preto Codil Tipo 1 Premium 1kg garante o melhor feijão para a sua mesa, sendo a escolha ideal para quem busca qualidade superior e alto rendimento. Classificado como Tipo 1, este produto passa por um rigoroso processo de seleção eletrônica que assegura grãos grandes, inteiros e uniformes, minimizando a necessidade de catação prévia. Com cozimento rápido e uniforme, o Feijão Codil Premium resulta em um caldo cremoso e saboroso, garantindo a base perfeita para o seu prato favorito do dia a dia.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 10,98</s>
+                        <ins>R$ 7,38</ins>
+                    </div>
+                    <p>-32%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto5" class="modal">
+        <div class="content">
+            <img src="https://fortatacadista.vteximg.com.br/arquivos/ids/205346-800-800/7896083800247_1_1_1200_72_RGB.jpg?v=637448396423500000" />
+            <div>
+                <h2>QBoa Água Sanitária 5L</h2>
+                <p>🧼 A Água Sanitária Qboa em galão de 5L é a solução de limpeza mais econômica e versátil para garantir a saúde e desinfecção de toda a casa. Com fórmula de cloro ativo (Hipoclorito de Sódio) no teor ideal ($2,0\%$ a $2,5\%$ p/p), Qboa elimina $99,99\%$ dos germes, bactérias, fungos e vírus de todas as superfícies laváveis, além de ser eficaz no combate à larva do mosquito Aedes aegypti. Indispensável para a limpeza profunda de pisos, banheiros e pias, também pode ser usada para alvejar roupas brancas e, quando diluída corretamente, para a higienização segura de frutas, verduras e legumes. É a tradição e o poder do cloro ativo, em um formato de alto rendimento.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 20,53</s>
+                        <ins>R$ 16,40</ins>
+                    </div>
+                    <p>-20%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto6" class="modal">
+        <div class="content">
+            <img src="https://trela.com.br/_next/image?url=https%3A%2F%2Fprod-zapt-images.s3.sa-east-1.amazonaws.com%2Fproducts%2F7c8d3365-8167-494f-9d68-1217499bcfed.png&w=3840&q=75" />
+            <div>
+                <h2>Pasta de Dente Colgate Tripla Ação</h2>
+                <p>🦷 O Creme Dental Colgate Tripla Ação é a solução completa para o cuidado oral diário, oferecendo uma fórmula clinicamente comprovada que proporciona três benefícios essenciais em uma única escovação. Com flúor ativo, ele garante proteção anticárie eficaz para dentes mais fortes, ajuda a remover manchas e placas para um sorriso mais branco e deixa uma sensação prolongada de hálito fresco. É a combinação ideal de proteção, limpeza e frescor que a sua família já confia, no formato prático de 90g.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 4,99</s>
+                        <ins>R$ 3,78</ins>
+                    </div>
+                    <p>-24%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto7" class="modal">
+        <div class="content">
+            <img src="https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F13007377%2F7464569717_1_xlarge.jpg%3Fv%3D638754357579800000&w=768&q=90" />
+            <div>
+                <h2>Refrigerante Pepsi Black 1.5L</h2>
+                <p>⚫ A Pepsi Black 1,5L é a versão ousada do sabor clássico de cola, desenvolvida para quem busca uma experiência intensa e profunda, mas sem abrir mão da preocupação com a saúde. Com uma fórmula inovadora, ela entrega o máximo sabor da Pepsi, mas é zero açúcar e zero calorias, sendo adoçada com Aspartame e Acessulfame de Potássio. Perfeita para quem não quer comprometer a dieta, cada gole oferece uma refrescância e efervescência superiores, na medida ideal de 1,5L para compartilhar a qualquer hora.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 10,99</s>
+                        <ins>R$ 6,23</ins>
+                    </div>
+                    <p>-43%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto8" class="modal">
+        <div class="content">
+            <img src="https://bistek.vtexassets.com/arquivos/ids/204983-800-800?v=638731720010200000&width=800&height=800&aspect=true" />
+            <div>
+                <h2>Suco Natural One 2l Laranja</h2>
+                <p>🍊 O Suco de Laranja Integral Natural One 2L é a experiência do suco da fruta espremida, ideal para toda a família. Feito com 100% suco de laranja integral, não possui adição de açúcares, conservantes ou aromatizantes, preservando ao máximo o sabor e os nutrientes naturais da fruta, além de ser rico em Vitamina C. Embalado em garrafa com tecnologia que ajuda a proteger o suco (ambiente ou refrigerado, dependendo da linha), é a garantia de um produto puro e saudável para um consumo diário e delicioso.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 28,99</s>
+                        <ins>R$ 16,63</ins>
+                    </div>
+                    <p>-43%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto9" class="modal">
+        <div class="content">
+            <img src="https://farmaciaindiana.vtexassets.com/arquivos/ids/211029-800-1067?v=636827359839370000&width=800&height=1067&aspect=true" />
+            <div>
+                <h2>Café 3 Corações Tradicional 500g</h2>
+                <p>☕ O Café 3 Corações Torrado e Moído Tradicional 500g é a tradição do café brasileiro na sua xícara, sendo a escolha clássica para quem busca sabor equilibrado, aroma marcante e o prazer do café de todo dia. Com um ponto de torra e moagem ideal que ressalta o seu sabor encorpado e sua baixa acidez, ele é perfeito para o preparo rápido no coador tradicional. A 3 Corações garante a qualidade em cada pacote, oferecendo o estímulo e o calor que o seu dia precisa, com a praticidade da embalagem de 500g.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 35,99</s>
+                        <ins>R$ 26,38</ins>
+                    </div>
+                    <p>-27%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto10" class="modal">
+        <div class="content">
+            <img src="https://drogariasp.vteximg.com.br/arquivos/ids/1126564-1000-1000/Chocolate-KITKAT-4-Fingers-ao-Leite-41-5g428094_0003_6509dbf3c119060be8271626_1.png?v=638557999926430000" />
+            <div>
+                <h2>Kit Kat ao leite 41,5g</h2>
+                <p>🍫 O Kit Kat Ao Leite é um convite ao seu momento de pausa, oferecendo a combinação irresistível do chocolate Nestlé cremoso com a crocância inconfundível do wafer em três camadas. Com o slogan "Have a Break, Have a Kit Kat", este tablete de 41,5g proporciona a dose perfeita de sabor para recarregar as energias. É a combinação ideal de texturas e sabor ao leite que faz deste chocolate um clássico mundial, perfeito para ser compartilhado ou saboreado a qualquer momento.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 4,99</s>
+                        <ins>R$ 2,86</ins>
+                    </div>
+                    <p>-43%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto11" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/205951095/197564_1.jpg?v=638977936725700000" />
+            <div>
+                <h2>Açúcar Refinado União 1Kg</h2>
+                <p>🍬 O Açúcar Refinado União 1kg é sinônimo de tradição e qualidade na cozinha brasileira, sendo o adoçante clássico para o dia a dia. Produzido a partir da cana-de-açúcar, ele passa por um rigoroso processo de refinamento que resulta em cristais finos, brancos e de sabor suave. Sua alta pureza e rápida dissolução o tornam ideal para adoçar bebidas (quentes ou frias) e, principalmente, para garantir a textura e o resultado perfeitos em sobremesas, bolos e misturas delicadas.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 4,99</s>
+                        <ins>R$ 4,06</ins>
+                    </div>
+                    <p>-19%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto12" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/194167397/fralda-pants-roupinha-huggies-protecao-acolchoada-g-30-unidades-1.jpg?v=638893975073100000" />
+            <div>
+                <h2>Fralda Pants Huggies G 30 unidades</h2>
+                <p>👶 A <b>Fralda Huggies Turma da Mônica Supreme Care Roupinha Pants G (30 unidades)</b> é a solução perfeita para a fase de maior movimento do bebê, oferecendo o máximo de conforto e praticidade. Projetada como uma calcinha/cuequinha (pants), ela veste-se facilmente com um único puxão, ideal para a troca durante o dia, sem precisar de fitas adesivas, e é retirada rasgando as laterais. Possui a Tecnologia Xtra-Flex que oferece flexibilidade e um ajuste perfeito ao corpo, combinada com a máxima absorção e cintura elástica 360°, garantindo liberdade de movimento e proteção de até 12 horas contra vazamentos.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 64,99</s>
+                        <ins>R$ 35,97</ins>
+                    </div>
+                    <p>-44%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto13" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/31643626/limpador-multiuso-veja-original-com-10--de-desconto-500ml-1.jpg?v=637776904331170000" />
+            <div>
+                <h2>Limpador Multiuso Veja Gold 500ml</h2>
+                <p>✨ O Limpador Multiuso Veja Gold Original 500ml é a solução de limpeza mais reconhecida e eficaz para a rotina da casa, combinando poder de limpeza e o clássico perfume de Veja. Com uma fórmula balanceada, ele remove a sujeira, a gordura e a poeira de todas as superfícies laváveis (como pisos, azulejos, pias e eletrodomésticos) com rapidez e praticidade, sem deixar resíduos. O formato com gatilho spray facilita a aplicação direta na sujeira, garantindo uma limpeza eficiente e com secagem rápida, para um ambiente sempre brilhante e perfumado.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 64,99</s>
+                        <ins>R$ 35,97</ins>
+                    </div>
+                    <p>-44%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto14" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/13335267/iog-natural-integral-danone-160g-1.jpg?v=637486482953330000" />
+            <div>
+                <h2>Iogurte Integral Danone Natural 160g</h2>
+                <p>🥛 O Iogurte Integral Natural Danone 160g é a base perfeita para uma alimentação equilibrada, oferecendo o sabor puro e a cremosidade do leite fermentado. Produzido com apenas dois ingredientes (leite e fermento lácteo), este iogurte é integral, o que garante uma textura mais rica e a preservação das vitaminas lipossolúveis do leite, além de ser uma excelente fonte de cálcio e proteínas. Sem adição de açúcares, é ideal para ser consumido puro, com frutas, mel, cereais ou para ser a base de receitas doces e salgadas, promovendo o bem-estar intestinal.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 4,19</s>
+                        <ins>R$ 2,57</ins>
+                    </div>
+                    <p>-39%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto15" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193974697/sabao-em-barra-ype-neutro-800g-1.jpg?v=638882819222700000" />
+            <div>
+                <h2>Sabão em Barra Ypê Neutro 800g</h2>
+                <p>🥛 O Iogurte Integral Natural Danone 160g é a base perfeita para uma alimentação equilibrada, oferecendo o sabor puro e a cremosidade do leite fermentado. Produzido com apenas dois ingredientes (leite e fermento lácteo), este iogurte é integral, o que garante uma textura mais rica e a preservação das vitaminas lipossolúveis do leite, além de ser uma excelente fonte de cálcio e proteínas. Sem adição de açúcares, é ideal para ser consumido puro, com frutas, mel, cereais ou para ser a base de receitas doces e salgadas, promovendo o bem-estar intestinal.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 11,59</s>
+                        <ins>R$ 7,37</ins>
+                    </div>
+                    <p>-36%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto16" class="modal">
+        <div class="content">
+            <img src="https://phygital-files.mercafacil.com/catalogo/uploads/produto/fil_de_peito_de_frango_em_bifes_congelado_sadia_800g_ccdbe36a-fc51-4d0f-99ba-9ba1f790b9a7.png" />
+            <div>
+                <h2>Filé de Peito de Frango em bife 800g</h2>
+                <p>🐔 O Filé de Peito de Frango em Bife 800g é a escolha prática e saudável para o seu dia a dia, entregando a proteína magra essencial em porções já cortadas e prontas para o preparo. Idealmente embalado (geralmente por marcas líderes como Sadia ou Perdigão) para preservar o frescor e a qualidade, cada bife é padronizado em espessura, garantindo um cozimento rápido e uniforme, seja na grelha, frigideira ou forno. É a versatilidade e o baixo teor de gordura do peito de frango, pronto para ser temperado e servido em minutos.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 24,99</s>
+                        <ins>R$ 18,22</ins>
+                    </div>
+                    <p>-27%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto17" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/68322423/salmao-inteiro-congelado-kg-1.jpg?v=637947065892570000" />
+            <div>
+                <h2>Salmão Inteiro Congelado</h2>
+                <p>🐟 O <mark>Salmão Inteiro Congelado é a garantia de um peixe rico em nutrientes e de alta versatilidade</mark>, pronto para ser preparado na medida exata da sua necessidade. Conhecido por sua textura macia e sabor suave e marcante, o salmão é uma excelente fonte de Ômega-3 (gordura saudável) e proteínas, essenciais para a saúde. Por estar inteiro e eviscerado (sem as vísceras), permite que você escolha o corte ideal (posta, filé, sashimi ou assado completo) e oferece a praticidade do congelamento para ser consumido quando desejar.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 109,99</s>
+                        <ins>R$ 85,73</ins>
+                    </div>
+                    <p>-22%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto18" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/68322423/salmao-inteiro-congelado-kg-1.jpg?v=637947065892570000" />
+            <div>
+                <h2>Salmão Inteiro Congelado</h2>
+                <p>🐟 O Salmão Inteiro Congelado é a garantia de um peixe rico em nutrientes e de alta versatilidade, pronto para ser preparado na medida exata da sua necessidade. Conhecido por sua textura macia e sabor suave e marcante, o salmão é uma excelente fonte de Ômega-3 (gordura saudável) e proteínas, essenciais para a saúde. Por estar inteiro e eviscerado (sem as vísceras), permite que você escolha o corte ideal (posta, filé, sashimi ou assado completo) e oferece a praticidade do congelamento para ser consumido quando desejar.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 109,99</s>
+                        <ins>R$ 85,73</ins>
+                    </div>
+                    <p>-22%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto18" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/132095395/suco-de-laranja-integral-refrigerado-natural-one-100--suco-900ml-1.jpg?v=638322173425770000" />
+            <div>
+                <h2>Suco Natural One Laranja 900ml</h2>
+                <p>🍊 O Suco de Laranja Integral Natural One 900ml oferece o máximo sabor da fruta 100% espremida, na medida perfeita para o consumo individual ou de pequenos grupos. Este suco é integral, zero adição de açúcares, conservantes ou aromatizantes, mantendo a pureza e os nutrientes naturais, especialmente a Vitamina C. Processado com tecnologia de envase a frio para preservar as características da fruta, é a opção saudável e refrescante para o café da manhã ou lanche, garantindo a qualidade do suco feito em casa, mas com a praticidade da garrafa.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 21,99</s>
+                        <ins>R$ 9,38</ins>
+                    </div>
+                    <p>-57%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto19" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/192280291/78936683_1_2_1200_72_RGB.png.png?v=638832650739330000&quality=5" />
+            <div>
+                <h2>Cerveja Heineken Garrafa 330ml</h2>
+                <p>🍺 A Cerveja Heineken (Long Neck 330ml) é mundialmente reconhecida por seu sabor puro, leve e refrescante, com um toque frutado sutil e um amargor na medida certa. Produzida com apenas três ingredientes naturais (água, malte e lúpulo) e fermentada com a exclusiva Levedura A, é uma Lager Premium de alta qualidade. Ideal para ser consumida super gelada, esta garrafa individual é o formato perfeito para garantir que você aproveite o sabor único da Heineken em seu momento de relaxamento ou em encontros sociais.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 7,99</s>
+                        <ins>R$ 3,38</ins>
+                    </div>
+                    <p>-58%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto20" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/106444563/cerveja-brahma-duplo-malte-puro-malte-350ml-lata-1.jpg?v=638144901422700000" />
+            <div>
+                <h2>Cerveja Brahma Duplo Malte Puro Malte 350ml Lata</h2>
+                <p>🍻 A Cerveja Brahma Duplo Malte (Lata 350ml) é uma Lager de sabor único, que nasceu da combinação de dois tipos de malte (Pilsen e Munich), resultando em uma cerveja de cor dourada, sabor mais encorpado e cremosidade superior. Mantendo a refrescância característica da Brahma, esta versão "Puro Malte" oferece um paladar mais intenso e equilibrado, ideal para quem busca uma cerveja de qualidade superior e com mais personalidade, perfeita para harmonizar com petiscos e churrascos.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 3,99</s>
+                        <ins>R$ 1,98</ins>
+                    </div>
+                    <p>-50%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto21" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/185707347/macarrao-tortelini-tricolori-carrefour-500g-1.jpg?v=638757473671800000" />
+            <div>
+                <h2>Macarrão Tortelini Tricolori Carrefour 500g</h2>
+                <p>🍝 O Macarrão Tortelini Tricolori Carrefour 500g é uma massa seca com um formato clássico e divertido, ideal para trazer cor e sofisticação aos seus pratos. A característica Tricolori (três cores) é obtida pela adição de ingredientes naturais – geralmente espinafre (verde) e tomate (vermelho) – que, além de colorir, adicionam um leve toque de sabor à massa. Com o formato de pequenos anéis ("tortelini", neste caso, referindo-se ao formato da massa vazia, não à massa recheada), ele é versátil e harmoniza bem com molhos leves, azeite ou manteiga e sálvia, sendo uma ótima opção para saladas de massa ou acompanhamentos.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 8,99</s>
+                        <ins>R$ 4,63</ins>
+                    </div>
+                    <p>-48%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto22" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/215242/5623740_1.jpg?v=637272520425830000" />
+            <div>
+                <h2>Barra de Cereal Sabor Avelã + Nibs de Cacau Zero Enjoy 50g 2 Unidades</h2>
+                <p>🍫 A Barra de Cereal Enjoy Zero Sabor Avelã + Nibs de Cacau é a opção de snack ideal para quem busca energia e sabor, com o benefício de ser zero adição de açúcares. Composta por uma mistura rica de cereais, o produto é complementado pela combinação sofisticada do sabor de avelã e a crocância e intensidade dos nibs de cacau. Embalada em um duopack de 2 unidades de 50g (totalizando 100g), é perfeita para levar na bolsa, consumir entre refeições ou antes do exercício, oferecendo um lanche nutritivo e prático.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 7,99</s>
+                        <ins>R$ 4,32</ins>
+                    </div>
+                    <p>-46%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto23" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/187173713/kit-shampoo-300ml---condicionador-190ml-seda-ceramidas-1.jpg?v=638785045313000000" />
+            <div>
+                <h2>Kit Shampoo 300ml + Condicionador 190ml Seda Brilho Ceramidas</h2>
+                <p>✨ O Kit Seda Brilho Ceramidas é a combinação ideal para cabelos que precisam de brilho intenso e proteção contra o ressecamento. Sua fórmula exclusiva, enriquecida com Ceramidas, atua como uma cola celular que sela as cutículas, reparando a fibra capilar e aumentando a resistência dos fios. O uso conjunto do Shampoo (325ml) e do Condicionador (190ml) promove uma limpeza eficaz seguida por uma hidratação profunda, resultando em cabelos macios, sedosos e com um brilho espelhado que dura o dia todo.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 19,99</s>
+                        <ins>R$ 12,32</ins>
+                    </div>
+                    <p>-38%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto24" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/210057/5444071_1.jpg?v=637272511115000000" />
+            <div>
+                <h2>Shampoo 2 em 1 Anticaspa Clear Men Limpeza Diária 400ml</h2>
+                <p>🧴 O Shampoo 2 em 1 Anticaspa Clear Men Limpeza Diária 400ml é a solução prática e eficiente para homens que buscam cuidado completo e controle da caspa em um único produto. Formulado com a exclusiva tecnologia Triple Anti-Dandruff Tech, ele elimina até 100% da caspa visível, nutre o couro cabeludo e previne o reaparecimento da caspa com o uso regular. Por ser 2 em 1 (Shampoo + Condicionador), ele limpa profundamente e condiciona os fios ao mesmo tempo, proporcionando uma sensação de frescor e maciez para o uso diário.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 29,99</s>
+                        <ins>R$ 16,54</ins>
+                    </div>
+                    <p>-45%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto25" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/191141/7099541_1.jpg?v=637272424648630000" />
+            <div>
+                <h2>Sabonete em Barra Corporal Phebo Amazonian 90g</h2>
+                <p>🌿 O Sabonete em Barra Corporal Phebo Amazônia 90g é uma experiência de banho que transporta você para a natureza exuberante da floresta, com uma fragrância exótica, fresca e envolvente. Formulado com uma base vegetal e enriquecido com manteiga de murumuru, ele oferece uma espuma rica e cremosa que limpa suavemente a pele sem ressecar, deixando-a macia e delicadamente perfumada. Sua alta concentração de fragrância (característica da Phebo) garante um perfume duradouro, ideal para quem busca um toque de sofisticação no cuidado diário.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 5,99</s>
+                        <ins>R$ 3,31</ins>
+                    </div>
+                    <p>-45%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto26" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/159736102/41d6f13b31b3413299bd7d6a512b3ecb.jpg?v=638540640349230000" />
+            <div>
+                <h2>Sabonete em Barra Corporal Francis Clássico Rosas de Versalles 90g - Branco</h2>
+                <p>🌹 O Sabonete em Barra Francis Clássico Rosas de Versailles 90g é a escolha tradicional para o banho, oferecendo uma fragrância delicada, floral e inesquecível que evoca o frescor das rosas brancas. Desenvolvido com óleos florais das melhores essências do mundo e tecnologia de longa duração, ele garante que sua pele permaneça perfumada por mais tempo. Além de proporcionar uma espuma suave e uma pele macia, a fórmula do Francis Clássico possui ação antibacteriana, eliminando $99,9\%$ das bactérias para um cuidado completo de proteção e perfume no uso diário.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 4,59</s>
+                        <ins>R$ 2,38</ins>
+                    </div>
+                    <p>-48%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto27" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/193817565/mostarda-escura-heinz-235g-1.jpg?v=638875808143470000" />
+            <div>
+                <h2>Mostarda Escura Heinz 235g</h2>
+                <p>🇩🇪 A Mostarda Escura Heinz 235g oferece um sabor rico, agridoce e levemente picante, sendo uma versão sofisticada e encorpada da mostarda tradicional, perfeita para quem aprecia um paladar mais robusto. Sua cor escura e textura com grãos de mostarda visíveis (inteiros ou parcialmente moídos) a diferenciam das mostardas amarelas comuns, adicionando um toque gourmet a sanduíches, salsichas (salsichões), carnes assadas e marinadas. É o toque de sabor complexo e autêntico para elevar suas receitas.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 22,59</s>
+                        <ins>R$ 12,76</ins>
+                    </div>
+                    <p>-44%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto28" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/138029625/molho-de-pimenta-sriracha-kalassi-200ml-1.jpg?v=638442884153530000" />
+            <div>
+                <h2>Molho de Pimenta Sriracha Kalassi 200ml</h2>
+                <p>🌶️ O Molho de Pimenta <i>Sriracha Kalassi</i> 200ml é o autêntico e vibrante molho tailandês, famoso mundialmente por seu <em>equilíbrio perfeito entre ardência picante e um sabor levemente adocicado e avinagrado</em>, à base de pimentas vermelhas maduras e alho. Reconhecido pela sua textura espessa e suave, este molho é extremamente versátil: ideal para adicionar um toque asiático em pratos como noodles, dim sum, spring rolls, ou para ser usado como um intensificador de sabor em pizzas, sanduíches e até mesmo coquetéis. É a dose de calor e sabor que transforma o comum em extraordinário.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 34,59</s>
+                        <ins>R$ 18,96</ins>
+                    </div>
+                    <p>-45%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto29" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
+            <div>
+                <h2>Lâmpada Superled Ouro Branca Bivolt 12W 3000K Ourolux Bulbo A</h2>
+                <p>💡 A Lâmpada Superled Ourolux Bulbo A é a escolha ideal para uma iluminação eficiente e aconchegante, substituindo as antigas lâmpadas incandescentes de 75W ou 100W. Com apenas 12W de potência, ela oferece uma economia de energia superior e uma vida útil prolongada. <br/>Sua temperatura de cor de 3000K (Branco Quente) proporciona uma luz amarelada, perfeita para criar ambientes de relaxamento e conforto como salas de estar, quartos e varandas. Possui formato Bulbo A (tradicional) e é Bivolt, garantindo fácil instalação e a qualidade reconhecida da Ourolux.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 6,59</s>
+                        <ins>R$ 3,28</ins>
+                    </div>
+                    <p>-50%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div id="produto30" class="modal">
+        <div class="content">
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/78129598/lampada-superled-am-ourolux-12w-3000k-bi-1.jpg?v=638004239759800000" />
+            <div>
+                <h2>Carvão Briquete Pérola Negra Vegetal Forte 4kg</h2>
+                <p>🔥 O Carvão Briquete Pérola Negra Vegetal Forte 4kg é a escolha premium para o seu churrasco, oferecendo uma queima mais limpa, uniforme e de longa duração em comparação com o carvão tradicional. Produzido a partir de carvão vegetal compactado, o briquete tem um formato padronizado que facilita o acendimento e mantém o calor constante, sendo ideal para grelhar carnes lentamente e assar por longos períodos. É a garantia de alto rendimento e calor intenso com menos fumaça e desperdício, perfeito para os mestres churrasqueiros.</p>
+                <div class="preco">
+                    <div>
+                        <s>R$ 34,99</s>
+                        <ins>R$ 21,37</ins>
+                    </div>
+                    <p>-39%</p>
+                </div>
+                <div>
+                    <div>
+                        <button>-</button>
+                        <input type="number" value="1" min="0"/>
+                        <button>+</button>
+                    </div>
+                    <button><span class="material-symbols-outlined">shopping_cart</span>Comprar</button>
+                </div>
+            </div>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    
 </body>
 </html>

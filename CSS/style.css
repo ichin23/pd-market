@@ -812,3 +812,108 @@ aside button{
         display: none;
     }
 }
+
+#sobre{
+    padding: 20px 30px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+}
+
+#contentSobre{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#contentSobre  >h2{
+    color:  var(--secondary);
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 10px
+}
+
+#contentSobre >blockquote{
+    margin: 20px 5px;
+}
+#canvasSobre{
+    height: 50px;
+}
+
+#contentSobre table{
+    width: 100%;
+}
+
+#contentSobre th, #contentSobre td {
+  border-bottom: 1px solid #3f3f3f;
+  padding: 5px;
+  text-align: center;
+}
+
+#contentSobre thead{
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+#contentSobre tr:nth-child(even) {background-color: var(--blueLight);}
+
+#contentSobre meter{
+    height: 20px;
+    width: 100vw;
+    max-width: 300px;
+}
+
+#contentSobre div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 10px;
+}
+
+#contentSobre div h4{
+    margin-right: 15%;
+    align-self: end;
+}
+
+#contentSobre details picture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contentSobre section{
+    width: 100%;
+    margin: 30px 20px;
+    display:flex;
+    flex-direction: column;
+}
+
+#contentSobre section > div{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#contentSobre section h2{
+    text-align: center;
+}
+#contentSobre section embed{
+    align-self: center;
+}
+
+#contentSobre dl{
+    padding: 12px;
+}
+
+#contentSobre dt{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#contentSobre dd{
+    padding-left: 20px;
+    margin-bottom: 20px;
+}

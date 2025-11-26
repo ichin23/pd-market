@@ -23,6 +23,7 @@
 body{
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Seção Header */
@@ -246,6 +247,11 @@ label[for=menuOpen]{
     }
 }
 
+a{
+    color: var(--black);
+    text-decoration: none;
+}
+
 
 .cardCarrossel{
     flex: 0 0 100vw;
@@ -384,6 +390,7 @@ label[for=menuOpen]{
     gap: 20px;
     overflow-x: scroll;
     width: 100vw;
+    justify-content: center;
 }
 
 #categoriasSec figure{
@@ -397,7 +404,7 @@ label[for=menuOpen]{
 
 #categoriasSec figure:hover{
     background-color: var(--secondary);
-    border-radius: 50%;
+    border-radius: 15%;
     cursor: pointer;
 }
 
@@ -527,8 +534,8 @@ aside button{
 }
 
 #containerProdutos label{
-    border: 1px solid #000;
-    border-radius: 30px;
+    border: 2px solid #000;
+    border-radius: 12px;
     padding: 8px;
     width: 400px;
     height: 40px;
